@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>口コミサイトのパワハラ投稿</title>
+  <style>
+    :root{ --bg:#f4f7fb; --card:#ffffff; --line:#d9e2ec; --text:#1f2d3d; --sub:#52606d; --accent:#1f6feb; --accent-soft:#eaf2ff; --danger:#c0392b; --ok:#1f7a4d; --shadow:0 10px 30px rgba(31,45,61,0.08); }
+    *{box-sizing:border-box}
+    body{ margin:0; font-family:"Hiragino Sans","Yu Gothic","Meiryo",sans-serif; color:var(--text); background:var(--bg); line-height:1.7; }
+    .wrap{ width:min(1000px,92%); margin:0 auto; padding:32px 0 80px; }
+    .hero{ background:linear-gradient(135deg,#1f6feb 0%, #4f8cff 100%); color:#fff; border-radius:16px; padding:30px; margin-bottom:24px; box-shadow:var(--shadow); }
+    .hero h1{ margin:0 0 8px; font-size:28px; }
+    .hero p{ margin:0; font-size:16px; opacity:.9; }
+    .section{ background:var(--card); border:1px solid var(--line); border-radius:16px; padding:24px; box-shadow:var(--shadow); margin-bottom:20px; }
+    .section h2{ margin:0 0 16px; font-size:22px; color:var(--accent); border-bottom:2px solid var(--accent-soft); padding-bottom:8px;}
+    .lead-box{ background:var(--accent-soft); border-left:6px solid var(--accent); padding:16px; border-radius:4px; margin-bottom:16px; font-weight:bold; font-size:18px;}
+    .grid-2{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .panel{ background:#f8fbff; border:1px solid #dbeafe; border-radius:8px; padding:16px; }
+    .panel h3{ margin:0 0 12px; font-size:16px; color:var(--accent); }
+    ul{ margin:0; padding-left:1.5em; }
+    li{ margin-bottom:6px; }
+    .risk{ background:#fff7f6; border-left:6px solid var(--danger); padding:16px; border-radius:4px; margin-top:16px; }
+    .risk strong{ color:var(--danger); display:block; margin-bottom:8px; font-size:18px;}
+    .action{ background:#f4fcf7; border-left:6px solid var(--ok); padding:16px; border-radius:4px; margin-top:16px; }
+    .action strong{ color:var(--ok); display:block; margin-bottom:8px; font-size:18px;}
+    .header-info { display: flex; justify-content: space-between; align-items: flex-end; }
+    .tags { font-size: 14px; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px;}
+    .footer-mark { text-align: right; color: var(--sub); font-size: 14px; margin-top: 20px;}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div class="header-info">
+        <div>
+          <h1>退職者による「パワハラ」口コミ投稿の違法性</h1>
+          <p>ICT・イノベーター事件</p>
+        </div>
+        <div class="tags">東京地判令7.1.15 / 労判1334号63頁</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>1. 裁判の結論（重要ポイント）</h2>
+      <div class="lead-box">
+        元社員が転職サイトに「パワハラがあり精神治療が必要になる」と投稿<br>
+        → 名誉毀損が成立し、損害賠償と記事の削除が命じられた。
+      </div>
+      <p>労働者側の一方的なネット上の誹謗中傷に対し、企業側が法的に反撃できることが示されました。</p>
+    </section>
+
+    <section class="section">
+      <h2>2. なぜ元社員が負けたのか（裁判の判断）</h2>
+      <div class="grid-2">
+        <div class="panel">
+          <h3>① 意見ではなく「事実の摘示」</h3>
+          <ul>
+            <li>「雰囲気が悪い」といった意見・論評の枠を超え、「長期間の治療が必要なパワハラが存在する」という証明可能な事実を記載したと判断。</li>
+            <li>事実の摘示は、意見よりも違法性の阻却（セーフになる）ハードルが厳しい。</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>② パワハラの真実性が否定された</h3>
+          <ul>
+            <li>投稿の前提となった代表者の発言等について、裁判所は法的なパワハラには該当しないと認定。</li>
+            <li>「パワハラが存在した」という真実性・真実相当性がないため、違法性は阻却されず名誉毀損となった。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>3. 経営者が陥りやすい論理の穴（リスク）</h2>
+      <div class="risk">
+        <strong>「ネットの悪口は全て訴えれば勝てる」という甘い見通し</strong>
+        <p>会社が勝てた最大の大前提は、「実際に社内でパワハラと認定されるような客観的事実が存在しなかった」からです。もし、日常的に暴言が飛び交っており、その音声やメール証拠が残っているような状況で会社が訴訟を起こせば、法廷でパワハラ認定の「お墨付き」を与えてしまい、完全に返り討ちに遭います。自社の清廉潔白を証明できる確証がなければ反撃は危険です。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>4. 企業がやるべき実務対応</h2>
+      <div class="action">
+        <strong>外部流出を防ぐ「社内浄化機能」の強化</strong>
+        <ul>
+          <li><strong>初動対応：</strong> 悪質な投稿を発見した場合、感情的に動かず、弁護士と連携して「IP開示・投稿者特定・削除請求」の手続きを淡々と進める。</li>
+          <li><strong>真の予防策：</strong> 退職者がネットに書き込むのは「社内で解決できなかった」からです。機能するハラスメント相談窓口の設置、問題行動の指導記録の保全、退職面談での丁寧なヒアリングなど、不満を外部へ持ち出させない体制構築が不可欠です。</li>
+        </ul>
+      </div>
+    </section>
+    <div class="footer-mark">土橋社労士事務所</div>
+  </div>
+</body>
+</html>

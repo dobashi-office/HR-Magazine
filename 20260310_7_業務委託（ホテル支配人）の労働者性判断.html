@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>業務委託の労働者性判断</title>
+  <style>
+    :root{ --bg:#f4f7fb; --card:#ffffff; --line:#d9e2ec; --text:#1f2d3d; --sub:#52606d; --accent:#1f6feb; --accent-soft:#eaf2ff; --danger:#c0392b; --ok:#1f7a4d; --shadow:0 10px 30px rgba(31,45,61,0.08); }
+    *{box-sizing:border-box}
+    body{ margin:0; font-family:"Hiragino Sans","Yu Gothic","Meiryo",sans-serif; color:var(--text); background:var(--bg); line-height:1.7; }
+    .wrap{ width:min(1000px,92%); margin:0 auto; padding:32px 0 80px; }
+    .hero{ background:linear-gradient(135deg,#1f6feb 0%, #4f8cff 100%); color:#fff; border-radius:16px; padding:30px; margin-bottom:24px; box-shadow:var(--shadow); }
+    .hero h1{ margin:0 0 8px; font-size:28px; }
+    .hero p{ margin:0; font-size:16px; opacity:.9; }
+    .section{ background:var(--card); border:1px solid var(--line); border-radius:16px; padding:24px; box-shadow:var(--shadow); margin-bottom:20px; }
+    .section h2{ margin:0 0 16px; font-size:22px; color:var(--accent); border-bottom:2px solid var(--accent-soft); padding-bottom:8px;}
+    .lead-box{ background:var(--accent-soft); border-left:6px solid var(--accent); padding:16px; border-radius:4px; margin-bottom:16px; font-weight:bold; font-size:18px;}
+    .grid-2{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .panel{ background:#f8fbff; border:1px solid #dbeafe; border-radius:8px; padding:16px; }
+    .panel h3{ margin:0 0 12px; font-size:16px; color:var(--accent); }
+    ul{ margin:0; padding-left:1.5em; }
+    li{ margin-bottom:6px; }
+    .risk{ background:#fff7f6; border-left:6px solid var(--danger); padding:16px; border-radius:4px; margin-top:16px; }
+    .risk strong{ color:var(--danger); display:block; margin-bottom:8px; font-size:18px;}
+    .action{ background:#f4fcf7; border-left:6px solid var(--ok); padding:16px; border-radius:4px; margin-top:16px; }
+    .action strong{ color:var(--ok); display:block; margin-bottom:8px; font-size:18px;}
+    .header-info { display: flex; justify-content: space-between; align-items: flex-end; }
+    .tags { font-size: 14px; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px;}
+    .footer-mark { text-align: right; color: var(--sub); font-size: 14px; margin-top: 20px;}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div class="header-info">
+        <div>
+          <h1>業務委託（ホテル支配人）の労働者性判断</h1>
+          <p>スーパーホテル事件</p>
+        </div>
+        <div class="tags">東京地判令7.7.10 / 労判1340号35頁</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>1. 裁判の結論（重要ポイント）</h2>
+      <div class="lead-box">
+        委託契約で住み込みのホテル支配人を務めていた者の「労働者性」<br>
+        → 労働契約法上の労働者性は否定された（委託契約の解除は有効）。
+      </div>
+      <p>マニュアルの指示や時間的拘束があっても、「業務委託契約の性質上必然的なもの」として指揮命令とはみなされませんでした。</p>
+    </section>
+
+    <section class="section">
+      <h2>2. なぜ会社が勝てたのか（裁判の判断）</h2>
+      <div class="grid-2">
+        <div class="panel">
+          <h3>① 強い拘束はあった</h3>
+          <ul>
+            <li>詳細な運営マニュアルによる指示が存在した。</li>
+            <li>営業時間内は対応を求められるなど、時間的・場所的な拘束があった。</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>② 「契約の目的」を重視</h3>
+          <ul>
+            <li>チェーンホテルのブランド維持や運営を丸ごと委託するという「契約の目的・性質」から必然的に生じる制約と判断。</li>
+            <li>使用従属性（指揮監督下での労働）を示す絶対的な要素とは評価されなかった。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>3. 経営者が陥りやすい論理の穴（リスク）</h2>
+      <div class="risk">
+        <strong>「マニュアルで細かく指示を出しても偽装請負にならない」という拡大解釈</strong>
+        <p>本件は「ホテル運営の丸ごと委託」という特有のビジネスモデルの性質が考慮された例外的な判断です。これを曲解し、一般の業務委託に対して「出退勤時間を細かく管理する」「作業手順をいちいち直接指示する」「報酬を時間給計算にする」といった運用を行えば、即座に「労働者（偽装請負）」と認定され、残業代請求や不当解雇のリスクを負うことになります。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>4. 企業がやるべき実務対応</h2>
+      <div class="action">
+        <strong>「業務遂行の裁量」を相手方に残す契約・運用</strong>
+        <ul>
+          <li><strong>裁量の確保：</strong> 業務の進め方、時間の使い方（いつ休むか等）について、委託先に決定権を委ねる。</li>
+          <li><strong>指示の限界：</strong> 「結果・成果物」に対する要件定義は行っても、「プロセス・作業手順」に対する都度の指揮命令は行わない。</li>
+          <li><strong>報酬の性質：</strong> 働いた「時間」に対する対価ではなく、業務の「完了・成果」に対する対価として契約・運用を徹底する。</li>
+        </ul>
+      </div>
+    </section>
+    <div class="footer-mark">土橋社労士事務所</div>
+  </div>
+</body>
+</html>

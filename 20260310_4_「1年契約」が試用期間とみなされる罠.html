@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>有期契約 vs 試用期間</title>
+  <style>
+    :root{ --bg:#f4f7fb; --card:#ffffff; --line:#d9e2ec; --text:#1f2d3d; --sub:#52606d; --accent:#1f6feb; --accent-soft:#eaf2ff; --danger:#c0392b; --ok:#1f7a4d; --shadow:0 10px 30px rgba(31,45,61,0.08); }
+    *{box-sizing:border-box}
+    body{ margin:0; font-family:"Hiragino Sans","Yu Gothic","Meiryo",sans-serif; color:var(--text); background:var(--bg); line-height:1.7; }
+    .wrap{ width:min(1000px,92%); margin:0 auto; padding:32px 0 80px; }
+    .hero{ background:linear-gradient(135deg,#1f6feb 0%, #4f8cff 100%); color:#fff; border-radius:16px; padding:30px; margin-bottom:24px; box-shadow:var(--shadow); }
+    .hero h1{ margin:0 0 8px; font-size:28px; }
+    .hero p{ margin:0; font-size:16px; opacity:.9; }
+    .section{ background:var(--card); border:1px solid var(--line); border-radius:16px; padding:24px; box-shadow:var(--shadow); margin-bottom:20px; }
+    .section h2{ margin:0 0 16px; font-size:22px; color:var(--accent); border-bottom:2px solid var(--accent-soft); padding-bottom:8px;}
+    .lead-box{ background:var(--accent-soft); border-left:6px solid var(--accent); padding:16px; border-radius:4px; margin-bottom:16px; font-weight:bold; font-size:18px;}
+    .grid-2{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .panel{ background:#f8fbff; border:1px solid #dbeafe; border-radius:8px; padding:16px; }
+    .panel h3{ margin:0 0 12px; font-size:16px; color:var(--accent); }
+    ul{ margin:0; padding-left:1.5em; }
+    li{ margin-bottom:6px; }
+    .risk{ background:#fff7f6; border-left:6px solid var(--danger); padding:16px; border-radius:4px; margin-top:16px; }
+    .risk strong{ color:var(--danger); display:block; margin-bottom:8px; font-size:18px;}
+    .action{ background:#f4fcf7; border-left:6px solid var(--ok); padding:16px; border-radius:4px; margin-top:16px; }
+    .action strong{ color:var(--ok); display:block; margin-bottom:8px; font-size:18px;}
+    .header-info { display: flex; justify-content: space-between; align-items: flex-end; }
+    .tags { font-size: 14px; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px;}
+    .footer-mark { text-align: right; color: var(--sub); font-size: 14px; margin-top: 20px;}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div class="header-info">
+        <div>
+          <h1>「1年契約」が試用期間とみなされる罠</h1>
+          <p>TBWA HAKUHODO事件</p>
+        </div>
+        <div class="tags">東京高判令7.4.10 / 労判1338号5頁</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>1. 裁判の結論（重要ポイント）</h2>
+      <div class="lead-box">
+        「最初は契約社員だが、1年後に正社員になる前提」と説明して採用<br>
+        → この契約は有期契約ではなく、最初から「無期雇用の試用期間」であると判断された。
+      </div>
+      <p>会社側が「契約満了による雇い止め」を主張しても認められず、実質的に「正社員の解雇」と同じ厳しい基準が適用されました。</p>
+    </section>
+
+    <section class="section">
+      <h2>2. なぜ会社が負けたのか（裁判の判断）</h2>
+      <div class="grid-2">
+        <div class="panel">
+          <h3>① 採用時の甘い説明</h3>
+          <ul>
+            <li>雇用契約書上は「1年間の有期契約」として締結していた。</li>
+            <li>しかし、採用面接や人材紹介会社を通じ「1年間は試用期間のようなもので、来年は正社員になる」と説明していた。</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>② 実質的解釈</h3>
+          <ul>
+            <li>労働契約の期間を設けた趣旨が「適性評価」である場合、特段の合意がない限り、それは契約存続期間ではなく「試用期間（解約権留保付無期雇用）」と解釈される。</li>
+            <li>採用時の口頭説明やメール記録が、契約書の文言（有期）を覆す決定打となった。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>3. 経営者が陥りやすい論理の穴（リスク）</h2>
+      <div class="risk">
+        <strong>「契約書が1年有期になっているから絶対安全」という思い込み</strong>
+        <p>「とりあえず1年契約で様子を見て、使えなかったら雇い止めすればいい」という手法は、採用担当者が求職者を安心させるために発した「正社員前提です」の一言で完全に崩壊します。有期雇用の雇い止めではなく、正社員の本採用拒否（解雇）として扱われるため、不当解雇リスクが跳ね上がります。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>4. 企業がやるべき実務対応</h2>
+      <div class="action">
+        <strong>採用現場での「発言統制」と契約の明確化</strong>
+        <ul>
+          <li><strong>言ってはいけないNGワード：</strong>「正社員前提です」「試用期間のようなものです」</li>
+          <li><strong>正しい説明：</strong>「今回は1年間の有期契約です。実績に応じて正社員登用試験を受ける制度はありますが、必ずなれるわけではなく、期間満了で終了する可能性もあります。」</li>
+          <li>人事だけでなく、現場の面接官や人材紹介会社に対しても、募集条件の説明内容を徹底的に統制する。適性を見たいだけなら、有期契約への逃げ道を期待せず、最初から無期契約の「試用期間」として堂々と運用する。</li>
+        </ul>
+      </div>
+    </section>
+    <div class="footer-mark">土橋社労士事務所</div>
+  </div>
+</body>
+</html>
