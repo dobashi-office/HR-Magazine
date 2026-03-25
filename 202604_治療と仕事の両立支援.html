@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026年4月改正 治療と仕事の両立支援 実務対応ガイド</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+        .print-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        @media print {
+            body { background: white; }
+            .print-container { box-shadow: none; max-width: 100%; }
+            .no-print { display: none; }
+            .break-inside-avoid { break-inside: avoid; }
+        }
+        .section-title {
+            border-left: 6px solid #2563eb; /* blue-600 */
+            padding-left: 1rem;
+            margin-bottom: 1rem;
+        }
+        .bg-stripe {
+            background-image: linear-gradient(135deg, #f1f5f9 25%, transparent 25%, transparent 50%, #f1f5f9 50%, #f1f5f9 75%, transparent 75%, transparent);
+            background-size: 20px 20px;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <!-- Action Button -->
+    <div class="max-w-4xl mx-auto mb-4 flex justify-end no-print">
+        <button onclick="window.print()" class="bg-slate-700 text-white px-4 py-2 rounded shadow hover:bg-slate-800 transition items-center gap-2 flex">
+            <i class="fas fa-print"></i> 印刷・PDF保存
+        </button>
+    </div>
+
+    <!-- Main Document -->
+    <div class="print-container p-8 md:p-12 rounded-lg">
+        
+        <!-- Header -->
+        <header class="border-b-2 border-slate-200 pb-6 mb-8">
+            <div class="flex justify-between items-end">
+                <div>
+                    <span class="bg-blue-600 text-white text-xs font-bold px-2 py-1 rounded mb-2 inline-block">2026年（令和8年）4月改正対応</span>
+                    <h1 class="text-2xl md:text-3xl font-bold text-slate-800 mt-1">治療と仕事の両立支援</h1>
+                    <p class="text-lg text-slate-600 mt-1 font-bold">― 情報開示・ハラスメント対応の実務 ―</p>
+                </div>
+                <div class="text-right hidden md:block">
+                    <p class="text-sm text-slate-500">発行：土橋社労士事務所</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Section 1: What Changes? -->
+        <section class="mb-10 break-inside-avoid">
+            <h2 class="section-title text-xl font-bold text-slate-800 flex items-center">
+                1. 2026年4月から何が変わるのか（正確な整理）
+            </h2>
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-5 rounded-r-lg mb-4">
+                <p class="font-bold text-blue-900 text-lg mb-2">結論：労働施策総合推進法に基づく「努力義務」へ</p>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    これまでは「安全配慮義務の解釈問題」だったものが、法律上も<strong class="text-blue-700">「会社が取り組むべき施策」として明示される</strong>位置づけになります。<br>
+                    新しい義務が突然課されるというよりは、実務で求められてきた対応が「法律上も当然の前提」に格上げされるという性格です。
+                </p>
+                
+                <!-- Added: Details of the duty -->
+                <div class="bg-white p-4 rounded border border-blue-200">
+                    <p class="font-bold text-blue-800 border-b border-blue-100 pb-2 mb-2">
+                        <i class="fas fa-tasks mr-2"></i>具体的に努力義務となる内容（2つのプラン作成）
+                    </p>
+                    <ul class="space-y-2 text-sm text-slate-700">
+                        <li class="flex items-start">
+                            <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded mr-2 mt-0.5 flex-shrink-0">通院中</span>
+                            <span><strong>「治療と就業の両立支援プラン」の作成</strong><br><span class="text-slate-500 text-xs">治療スケジュール、時差出勤・短時間勤務などの措置内容をまとめた計画</span></span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded mr-2 mt-0.5 flex-shrink-0">復職時</span>
+                            <span><strong>「職場復帰支援プラン」の作成</strong><br><span class="text-slate-500 text-xs">主治医の意見を踏まえた、復帰の可否判断や段階的な復帰スケジュールの計画</span></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="bg-white border border-slate-200 p-4 rounded-lg shadow-sm">
+                <h3 class="font-bold text-slate-700 mb-2 border-b pb-2"><i class="fas fa-exclamation-triangle text-amber-500 mr-2"></i>実質的に問われるポイント</h3>
+                <p class="text-sm text-slate-600 mb-3">法律上は「努力義務」ですが、「努力義務だからやっていない」は通用しにくくなります。以下の場面で、会社の対応（何をしていたか）が厳しく問われる構造になります。</p>
+                <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm font-bold text-slate-700">
+                    <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>労基署・行政指導</li>
+                    <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>労働審判・訴訟</li>
+                    <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>ハラスメント相談・社内調査</li>
+                    <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>メンタル不調・私傷病トラブル</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section 2: The Trap of Info Disclosure -->
+        <section class="mb-10 break-inside-avoid">
+            <h2 class="section-title text-xl font-bold text-slate-800 flex items-center">
+                2. 情報開示が最大の落とし穴
+            </h2>
+            <p class="mb-4 text-slate-700">
+                現場で最も起きやすい誤解が、<span class="bg-yellow-100 font-bold px-1">「配慮しないといけないから、社内に事情を全て共有しないといけない」</span>という思い込みです。これは非常に危険です。
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- NG Pattern -->
+                <div class="bg-red-50 border border-red-200 rounded-lg p-5">
+                    <h3 class="text-red-700 font-bold mb-3 flex items-center">
+                        <i class="fas fa-times-circle mr-2"></i>よくあるNGパターン
+                    </h3>
+                    <ul class="space-y-3 text-sm text-slate-700">
+                        <li class="flex items-start">
+                            <span class="mr-2 mt-1 text-red-400">●</span>
+                            本人の同意なく上司に詳細を伝える
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-2 mt-1 text-red-400">●</span>
+                            同僚に「〇〇さんは病気らしい」「治療中だ」と共有してしまう
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-2 mt-1 text-red-400">●</span>
+                            「配慮のため」という理由で、勝手に業務上の噂が広がる
+                        </li>
+                    </ul>
+                    <div class="mt-4 pt-3 border-t border-red-200 text-xs text-red-800 font-bold">
+                        👉 結果として「プライバシー侵害」「パワハラ・マタハラ・ケアハラ」「二次被害」に発展します。
+                    </div>
+                </div>
+
+                <!-- Why it's dangerous -->
+                <div class="bg-white border border-slate-200 rounded-lg p-5">
+                    <h3 class="text-slate-700 font-bold mb-3 flex items-center">
+                        <i class="fas fa-shield-alt mr-2 text-blue-500"></i>要配慮個人情報です
+                    </h3>
+                    <p class="text-sm text-slate-600 mb-4">
+                        以下の情報はすべて「要配慮個人情報」レベルのセンシティブ情報です。
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-slate-100 px-2 py-1 rounded text-xs border border-slate-300">病名</span>
+                        <span class="bg-slate-100 px-2 py-1 rounded text-xs border border-slate-300">治療内容</span>
+                        <span class="bg-slate-100 px-2 py-1 rounded text-xs border border-slate-300">通院状況</span>
+                        <span class="bg-slate-100 px-2 py-1 rounded text-xs border border-slate-300">体調の詳細</span>
+                    </div>
+                    <p class="text-sm text-slate-600">
+                        これらは「善意であっても」不適切な共有はハラスメントになり得ます。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Correct Principles -->
+        <section class="mb-10 break-inside-avoid">
+            <h2 class="section-title text-xl font-bold text-slate-800 flex items-center">
+                3. 正しい情報開示の原則（実務の肝）
+            </h2>
+            <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-6">
+                <div class="grid gap-6">
+                    <!-- Principle 1 -->
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0 w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600 font-bold">1</div>
+                        <div>
+                            <h4 class="font-bold text-emerald-900 text-lg">本人同意が大前提</h4>
+                            <p class="text-sm text-emerald-800 mt-1">同意なしの情報共有は原則NGです。同意がある場合でも、「範囲」「内容」「相手」を限定して記録に残します。</p>
+                        </div>
+                    </div>
+                    <!-- Principle 2 -->
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0 w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600 font-bold">2</div>
+                        <div>
+                            <h4 class="font-bold text-emerald-900 text-lg">目的限定（就業上の配慮のみ）</h4>
+                            <p class="text-sm text-emerald-800 mt-1">共有してよいのは<strong class="bg-emerald-200/50 px-1">「業務上必要な配慮を行うために必要な最小限の情報」</strong>です。</p>
+                            <div class="mt-2 flex gap-4 text-sm">
+                                <div class="text-slate-500"><i class="fas fa-times text-red-400 mr-1"></i>「〇〇病で治療中」</div>
+                                <div class="font-bold text-emerald-700"><i class="fas fa-circle text-emerald-500 mr-1"></i>「一定期間、長時間労働は控える必要がある」</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Principle 3 -->
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0 w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600 font-bold">3</div>
+                        <div>
+                            <h4 class="font-bold text-emerald-900 text-lg">病名は原則不要</h4>
+                            <p class="text-sm text-emerald-800 mt-1">病名・診断名の共有は原則不要です。共有すべきなのは「就業上の制限」と「具体的な配慮事項」だけです。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Practical Organization -->
+        <section class="mb-10 break-inside-avoid">
+            <h2 class="section-title text-xl font-bold text-slate-800 flex items-center">
+                4. ハラスメントにならないための社内ルール
+            </h2>
+            <div class="bg-white border-t-4 border-slate-500 shadow-sm rounded p-6">
+                <div class="grid md:grid-cols-3 gap-6 text-sm">
+                    <div>
+                        <h4 class="font-bold text-slate-800 mb-2 border-b pb-1">① 情報管理の窓口を限定</h4>
+                        <p class="text-slate-600">現場の上司任せにせず、「人事・総務」または「産業医・産業保健スタッフ」を情報のハブにします。</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-800 mb-2 border-b pb-1">② 伝え方の定型化</h4>
+                        <p class="text-slate-600">「配慮事項のみ伝える」「理由の詮索は禁止」という形で、上司・同僚への伝え方をルール化します。</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-800 mb-2 border-b pb-1">③ ハラスメント防止との関係</h4>
+                        <p class="text-slate-600">両立支援は本人の尊厳を守るための制度です。過度な干渉や不必要な共有はハラスメントになることを明示します。</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Warning Box -->
+            <div class="mt-6 bg-slate-100 p-4 rounded text-center">
+                <p class="font-bold text-slate-700 mb-1">⚠️ こんな会社は危険です</p>
+                <p class="text-sm text-slate-600">
+                    「両立支援のルールが存在しない」「情報開示の線引きが曖昧」「現場判断に丸投げ」<br>
+                    → 2026年4月以降、制度対応の不備よりも<strong>情報管理のミスでトラブルになる会社</strong>が増えると予想されます。
+                </p>
+            </div>
+        </section>
+
+        <!-- Summary / Key Phrase -->
+        <section class="bg-blue-600 text-white p-6 rounded-lg break-inside-avoid">
+            <h2 class="text-lg font-bold mb-4 flex items-center">
+                <i class="fas fa-lightbulb text-yellow-300 mr-2"></i>まとめ：社内周知・確認用の要点
+            </h2>
+            <div class="bg-white/10 p-4 rounded border border-white/20">
+                <p class="leading-relaxed mb-4">
+                    2026年4月から、治療と仕事の両立支援は労働施策総合推進法上の努力義務として位置づけられます。
+                </p>
+                <p class="leading-relaxed mb-4">
+                    これにより、会社には「対応していない理由」だけでなく、<strong>「どのように情報管理・配慮を行っていたか」</strong>まで説明責任が求められます。
+                </p>
+                <p class="leading-relaxed">
+                    特に、配慮を目的とした情報共有が、逆にハラスメントやプライバシー侵害と評価されないよう、情報開示のルール整備が重要になります。
+                </p>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="mt-12 text-center text-xs text-slate-400 border-t pt-4">
+            <p>© 2026 土橋社労士事務所</p>
+            <p>本資料は令和8年2月10日付官報（号外第29号）および労働施策総合推進法の改正内容に基づき作成しています。</p>
+            <p class="mt-2 break-all">
+                参照元: <a href="https://www.kanpo.go.jp/20260210/20260210g00029/20260210g000290006f.html" target="_blank" class="text-blue-500 hover:underline">https://www.kanpo.go.jp/20260210/20260210g00029/20260210g000290006f.html</a>
+            </p>
+        </footer>
+
+    </div>
+</body>
+</html>
