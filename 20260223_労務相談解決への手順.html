@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>労務紛争 構造整理・判断補助フレームワーク</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#1e40af', // blue-800
+                        secondary: '#3b82f6', // blue-500
+                        accent: '#f59e0b', // amber-500
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Noto Sans JP', sans-serif; }
+        /* スムーズスクロール */
+        html { scroll-behavior: smooth; }
+        /* 印刷用スタイル */
+        @media print {
+            .no-print { display: none !important; }
+            .print-w-full { width: 100% !important; margin: 0 !important; max-width: none !important; }
+            body { background-color: white; }
+            .shadow-sm { box-shadow: none; border: 1px solid #e5e7eb; }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 tracking-wide leading-relaxed">
+
+    <!-- ナビゲーションバー -->
+    <nav class="bg-primary text-white shadow-md sticky top-0 z-50 no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-2">
+                    <i data-lucide="scale" class="w-6 h-6"></i>
+                    <span class="font-bold text-lg tracking-wider">労務紛争 構造整理AI フレームワーク</span>
+                </div>
+                <div>
+                    <button onclick="window.print()" class="flex items-center gap-1 bg-white/20 hover:bg-white/30 px-3 py-1.5 rounded text-sm transition-colors">
+                        <i data-lucide="printer" class="w-4 h-4"></i>
+                        印刷 / PDF保存
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col md:flex-row gap-8">
+        
+        <!-- 左側：目次 (Sidebar) -->
+        <aside class="md:w-1/4 flex-shrink-0 no-print">
+            <div class="sticky top-24 bg-white rounded-xl shadow-sm p-5 border border-slate-200">
+                <h2 class="font-bold text-slate-700 mb-4 flex items-center gap-2 border-b pb-2">
+                    <i data-lucide="list" class="w-5 h-5 text-secondary"></i>
+                    目次
+                </h2>
+                <ul class="space-y-3 text-sm text-slate-600">
+                    <li><a href="#rule" class="hover:text-primary transition-colors flex items-center gap-2"><i data-lucide="alert-triangle" class="w-4 h-4 text-orange-500"></i>0. 絶対ルール</a></li>
+                    <li><a href="#step1" class="hover:text-primary transition-colors flex items-center gap-2"><i data-lucide="target" class="w-4 h-4 text-blue-500"></i>1. 結論の明示</a></li>
+                    <li><a href="#step2" class="hover:text-primary transition-colors flex items-center gap-2"><i data-lucide="git-branch" class="w-4 h-4 text-blue-500"></i>2. 法的構成・要件事実</a></li>
+                    <li><a href="#step3" class="hover:text-primary transition-colors flex items-center gap-2"><i data-lucide="crosshair" class="w-4 h-4 text-blue-500"></i>3. 争点の絞り込み</a></li>
+                    <li><a href="#step4" class="hover:text-primary transition-colors flex items-center gap-2"><i data-lucide="file-search" class="w-4 h-4 text-blue-500"></i>4. 証拠と心証形成</a></li>
+                    <li><a href="#step5" class="hover:text-primary transition-colors flex items-center gap-2"><i data-lucide="calendar" class="w-4 h-4 text-blue-500"></i>5. 進行設計</a></li>
+                    <li><a href="#step6" class="hover:text-primary transition-colors flex items-center gap-2"><i data-lucide="handshake" class="w-4 h-4 text-blue-500"></i>6. 解決案（心証別）</a></li>
+                    <li><a href="#step7" class="hover:text-primary transition-colors flex items-center gap-2"><i data-lucide="gavel" class="w-4 h-4 text-blue-500"></i>7. 訴訟見通し</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- 右側：メインコンテンツ -->
+        <main class="md:w-3/4 print-w-full space-y-8">
+            
+            <div class="bg-white rounded-xl shadow-sm p-6 sm:p-8 border border-slate-200">
+                <h1 class="text-2xl sm:text-3xl font-bold text-slate-800 mb-4 border-l-4 border-primary pl-4">
+                    専門AIの思考プロセス・マニュアル
+                </h1>
+                <p class="text-slate-600 mb-2">
+                    本資料は、労働審判官補助・労働局あっせん委員の中立的な立場で、労務紛争を整理し解決へ導くためのフレームワークです。
+                </p>
+                <div class="bg-blue-50 text-blue-800 p-4 rounded-lg text-sm flex items-start gap-3 mt-4">
+                    <i data-lucide="info" class="w-5 h-5 mt-0.5 flex-shrink-0"></i>
+                    <div>
+                        <strong>モデルケース設定：</strong><br>
+                        本資料では、理解を深めるため各ステップに「能力不足を理由とする普通解雇事案」を想定した具体例を記載しています。
+                    </div>
+                </div>
+            </div>
+
+            <!-- 0. 絶対ルール -->
+            <section id="rule" class="scroll-mt-24">
+                <div class="bg-orange-50 border-l-4 border-orange-500 rounded-r-xl shadow-sm p-6 sm:p-8">
+                    <h2 class="text-xl font-bold text-orange-800 mb-4 flex items-center gap-2">
+                        <i data-lucide="alert-triangle" class="w-6 h-6"></i>
+                        0. 絶対ルール（遵守必須）
+                    </h2>
+                    <ul class="space-y-2 text-orange-900 list-disc pl-5 font-medium">
+                        <li>事実はユーザーが提示した内容のみを使用し、<strong>推測は禁止</strong>する。</li>
+                        <li>不足情報は必ず<strong>「要確認」</strong>と明示する。</li>
+                        <li>最初に必ず「紛争類型 → 法的構成（規範）→ 要件事実」を作成し、省略しない。</li>
+                        <li>結論は断定せず、<strong>条件付き・分岐・レンジ</strong>で示す。</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 1. 結論の明示 -->
+            <section id="step1" class="scroll-mt-24 bg-white rounded-xl shadow-sm p-6 sm:p-8 border border-slate-200">
+                <h2 class="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2 border-b pb-2">
+                    <span class="bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">1</span>
+                    冒頭で必ず示す結論
+                </h2>
+                <div class="grid gap-6 md:grid-cols-2">
+                    <div>
+                        <h3 class="font-bold text-primary mb-2">① 紛争類型（請求類型）</h3>
+                        <p class="text-sm text-slate-600 bg-slate-50 p-3 rounded border">
+                            例：地位確認＋バックペイ / 解雇無効 / 雇止め / 残業代請求 / 休職満了退職無効 / ハラスメント損害賠償 等
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-primary mb-2">② 主要請求（主位・予備）</h3>
+                        <p class="text-sm text-slate-600 bg-slate-50 p-3 rounded border">
+                            主位＝地位確認請求、解雇後の未払賃金請求<br>
+                            予備＝合意退職を前提とした解決金支払請求 等
+                        </p>
+                    </div>
+                </div>
+                <div class="mt-6">
+                    <h3 class="font-bold text-primary mb-2">③ 判断枠組み（規範）</h3>
+                    <p class="text-sm text-slate-700 mb-2">条文・判例理論レベルで「どの要件を満たすかが判断基準となるか」を簡潔に示す。</p>
+                    <div class="bg-blue-50 p-4 rounded-lg border border-blue-100 text-sm text-slate-700">
+                        <strong>【モデルケース例：普通解雇】</strong><br>
+                        労働契約法第16条（解雇権濫用法理）：客観的に合理的な理由を欠き、社会通念上相当であると認められない場合は無効。<br>
+                        ＜判断要素＞ (1)能力不足の存在 (2)指導・教育の機会付与 (3)解雇回避努力 (4)解雇の相当性
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. 法的構成・要件事実 -->
+            <section id="step2" class="scroll-mt-24 bg-white rounded-xl shadow-sm p-6 sm:p-8 border border-slate-200">
+                <h2 class="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2 border-b pb-2">
+                    <span class="bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">2</span>
+                    法的構成（要件事実）の整理
+                </h2>
+                
+                <div class="mb-8">
+                    <h3 class="font-bold text-slate-700 mb-3 bg-slate-100 p-2 rounded">A. 要件事実ツリー <span class="text-sm font-normal text-red-500">※評価禁止</span></h3>
+                    <p class="text-sm text-slate-600 mb-4">法的な枠組みに基づき、当事者の主張を事実レベルで分解します。不明な要件は「要確認」とします。</p>
+                    <div class="space-y-3 text-sm border-l-2 border-slate-300 pl-4 ml-2">
+                        <div>
+                            <span class="font-bold text-blue-600">■ 請求原因（労働者側）</span>
+                            <ul class="list-disc pl-5 mt-1 text-slate-700">
+                                <li>① 労働契約の締結（雇用日、賃金等の条件）</li>
+                                <li>② 解雇の意思表示を受けた事実</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <span class="font-bold text-orange-600">■ 抗弁（会社側）</span>
+                            <ul class="list-disc pl-5 mt-1 text-slate-700">
+                                <li>① 就業規則上の解雇事由（能力不足）に該当する客観的事実</li>
+                                <li>② 改善指導を実施した事実</li>
+                                <li>③ 解雇回避努力を尽くした事実</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <span class="font-bold text-blue-600">■ 再抗弁（労働者側）</span>
+                            <ul class="list-disc pl-5 mt-1 text-slate-700">
+                                <li>① 会社側の指導が不適切であった事実（パワハラ等）</li>
+                                <li>② 他部署への配転可能性があった事実 <span class="text-red-500 font-bold">（要確認）</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="font-bold text-slate-700 mb-3 bg-slate-100 p-2 rounded">B. 認否の整理</h3>
+                    <div class="grid md:grid-cols-3 gap-4 text-sm">
+                        <div class="border rounded-lg p-3 border-green-200 bg-green-50">
+                            <h4 class="font-bold text-green-800 mb-2 border-b border-green-200 pb-1">争いのない事実</h4>
+                            <ul class="list-disc pl-4 text-green-900">
+                                <li>雇用契約の存在</li>
+                                <li>解雇日、解雇前の給与額</li>
+                            </ul>
+                        </div>
+                        <div class="border rounded-lg p-3 border-red-200 bg-red-50">
+                            <h4 class="font-bold text-red-800 mb-2 border-b border-red-200 pb-1">争いのある事実</h4>
+                            <ul class="list-disc pl-4 text-red-900">
+                                <li>能力不足の程度</li>
+                                <li>会社が行った指導の適正さ</li>
+                            </ul>
+                        </div>
+                        <div class="border rounded-lg p-3 border-slate-200 bg-slate-50">
+                            <h4 class="font-bold text-slate-800 mb-2 border-b border-slate-200 pb-1">真偽未確定の事実</h4>
+                            <ul class="list-disc pl-4 text-slate-700">
+                                <li>他部署の欠員状況<br><span class="text-xs text-red-500">※立証責任整理が必要</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. 争点の絞り込み -->
+            <section id="step3" class="scroll-mt-24 bg-white rounded-xl shadow-sm p-6 sm:p-8 border border-slate-200">
+                <h2 class="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2 border-b pb-2">
+                    <span class="bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">3</span>
+                    争点の絞り込み
+                </h2>
+                <p class="text-sm text-slate-600 mb-4">結論に影響する争点のみを抽出します（主要最大3、副次最大3）。</p>
+
+                <div class="space-y-4">
+                    <!-- 争点カード -->
+                    <div class="border border-slate-200 rounded-lg p-4 relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-1 h-full bg-secondary"></div>
+                        <h3 class="font-bold text-slate-800 flex items-center gap-2 mb-2">
+                            <span class="bg-slate-100 text-xs px-2 py-1 rounded border">主要争点1</span>
+                            能力不足の客観的程度と指導の有無
+                        </h3>
+                        <div class="grid md:grid-cols-2 gap-4 text-sm mt-3">
+                            <div>
+                                <p class="text-slate-500 text-xs mb-1">争点の意味 / 立証責任</p>
+                                <p class="text-slate-700">解雇の客観的合理性を基礎づける最重要事実。<br><strong>【立証責任：会社側】</strong></p>
+                            </div>
+                            <div class="bg-slate-50 p-2 rounded border border-slate-100">
+                                <p class="text-slate-500 text-xs mb-1">認定の分岐</p>
+                                <ul class="space-y-1">
+                                    <li class="flex items-start gap-2">
+                                        <span class="font-bold text-orange-600 min-w-[30px]">A認定</span>
+                                        <span class="text-slate-700">客観的証拠あり → <strong class="text-orange-700">会社に有利</strong></span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <span class="font-bold text-blue-600 min-w-[30px]">B認定</span>
+                                        <span class="text-slate-700">主観的評価のみ → <strong class="text-blue-700">労働者に有利</strong></span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="border border-slate-200 rounded-lg p-4 relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-1 h-full bg-slate-400"></div>
+                        <h3 class="font-bold text-slate-800 flex items-center gap-2 mb-2">
+                            <span class="bg-slate-100 text-xs px-2 py-1 rounded border">主要争点2</span>
+                            解雇回避努力の有無
+                        </h3>
+                        <div class="grid md:grid-cols-2 gap-4 text-sm mt-3">
+                            <div>
+                                <p class="text-slate-500 text-xs mb-1">争点の意味 / 立証責任</p>
+                                <p class="text-slate-700">解雇の最終手段性（相当性）を左右する。<br><strong>【立証責任：会社側】</strong></p>
+                            </div>
+                            <div class="bg-slate-50 p-2 rounded border border-slate-100">
+                                <p class="text-slate-500 text-xs mb-1">認定の分岐</p>
+                                <ul class="space-y-1">
+                                    <li class="flex items-start gap-2">
+                                        <span class="font-bold text-orange-600 min-w-[30px]">A認定</span>
+                                        <span class="text-slate-700">配転ポストなし → <strong class="text-orange-700">会社に有利</strong></span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <span class="font-bold text-blue-600 min-w-[30px]">B認定</span>
+                                        <span class="text-slate-700">配転検討せず → <strong class="text-blue-700">労働者に有利</strong></span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. 証拠と心証形成 -->
+            <section id="step4" class="scroll-mt-24 bg-white rounded-xl shadow-sm p-6 sm:p-8 border border-slate-200">
+                <h2 class="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2 border-b pb-2">
+                    <span class="bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">4</span>
+                    証拠と心証形成（争点別）
+                </h2>
+                
+                <div class="grid md:grid-cols-2 gap-6 text-sm">
+                    <div class="space-y-4">
+                        <div>
+                            <h3 class="font-bold text-slate-700 border-b pb-1 mb-2 flex items-center gap-2">
+                                <i data-lucide="file-text" class="w-4 h-4 text-slate-500"></i> 主要な直接証拠
+                            </h3>
+                            <p class="text-slate-600 bg-slate-50 p-2 rounded">就業規則、雇用契約書、解雇通知書、人事評価シート、指導記録・メール履歴</p>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-slate-700 border-b pb-1 mb-2 flex items-center gap-2">
+                                <i data-lucide="search" class="w-4 h-4 text-slate-500"></i> 間接事実
+                            </h3>
+                            <p class="text-slate-600 bg-slate-50 p-2 rounded">同僚の証言、ミスの頻度、過去の懲戒歴</p>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-red-600 border-b border-red-100 pb-1 mb-2 flex items-center gap-2">
+                                <i data-lucide="shield-alert" class="w-4 h-4 text-red-500"></i> 証拠の弱点
+                            </h3>
+                            <ul class="list-disc pl-5 text-slate-600">
+                                <li>人事評価が直属の上司の主観に偏っていないか</li>
+                                <li>指導記録が解雇直前にまとめられたものではないか</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-blue-50/50 p-4 rounded-lg border border-blue-100 space-y-4">
+                        <div>
+                            <h3 class="font-bold text-primary mb-2 flex items-center gap-2">
+                                <i data-lucide="plus-circle" class="w-4 h-4"></i> 追加提出を求める資料
+                            </h3>
+                            <p class="text-slate-700 bg-white p-2 rounded border border-blue-50">
+                                指導内容が具体的にわかるメール履歴、改善計画書（PIP）
+                            </p>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-primary mb-2 flex items-center gap-2">
+                                <i data-lucide="message-square" class="w-4 h-4"></i> 求釈明事項
+                            </h3>
+                            <ul class="space-y-2 text-slate-700">
+                                <li class="bg-white p-2 rounded border border-blue-50 flex items-start gap-2">
+                                    <span class="text-xs bg-orange-100 text-orange-800 px-1 py-0.5 rounded mt-0.5">会社へ</span>
+                                    <span>他部署への配置転換を検討しましたか？（Yes/No）</span>
+                                </li>
+                                <li class="bg-white p-2 rounded border border-blue-50 flex items-start gap-2">
+                                    <span class="text-xs bg-blue-100 text-blue-800 px-1 py-0.5 rounded mt-0.5">労働者へ</span>
+                                    <span>注意指導に対し、具体的にどのような改善行動をとりましたか？</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. 進行設計 -->
+            <section id="step5" class="scroll-mt-24 bg-white rounded-xl shadow-sm p-6 sm:p-8 border border-slate-200">
+                <h2 class="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2 border-b pb-2">
+                    <span class="bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">5</span>
+                    審理・あっせんの進行設計
+                </h2>
+                
+                <div class="flex flex-col md:flex-row gap-4">
+                    <div class="flex-1 bg-slate-50 p-4 rounded-lg border border-slate-200">
+                        <h3 class="font-bold text-slate-700 mb-3 flex items-center gap-2">
+                            <i data-lucide="flag" class="w-4 h-4 text-slate-500"></i> 初期確認事項
+                        </h3>
+                        <ul class="text-sm space-y-2 text-slate-600">
+                            <li><strong>早期確定事項：</strong>解雇理由の特定、基礎賃金額の合意</li>
+                            <li><strong>揃える証拠：</strong>第1回期日までに、会社側から指導の客観的記録を提出</li>
+                            <li><strong>呼出関係者：</strong>申立人本人、人事決定権者または直属の上司</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="flex-1 bg-yellow-50 p-4 rounded-lg border border-yellow-200">
+                        <h3 class="font-bold text-yellow-800 mb-3 flex items-center gap-2">
+                            <i data-lucide="clock" class="w-4 h-4 text-yellow-600"></i> 和解案提示のタイミング
+                        </h3>
+                        <p class="text-sm text-yellow-900 leading-relaxed">
+                            第1回期日で双方の言い分を聴取し、証拠の提出状況から初期心証を形成した後、<strong>第2回期日の冒頭</strong>で方向性（解雇の有効/無効の傾き）を示唆しつつ調停案を提示する。
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. 解決案 -->
+            <section id="step6" class="scroll-mt-24 bg-white rounded-xl shadow-sm p-6 sm:p-8 border border-slate-200">
+                <h2 class="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2 border-b pb-2">
+                    <span class="bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">6</span>
+                    解決案（調停・あっせん案）
+                </h2>
+                <p class="text-sm text-slate-600 mb-4">心証の方向性に基づき、3パターンの解決案を設計します。</p>
+
+                <div class="space-y-4">
+                    <!-- パターン1 -->
+                    <div class="border-l-4 border-orange-500 bg-white p-4 rounded-r-lg shadow-sm border-y border-r border-slate-200">
+                        <h3 class="font-bold text-orange-700 mb-2">① 会社寄りの心証（解雇有効の可能性が高い場合）</h3>
+                        <div class="text-sm text-slate-700 grid md:grid-cols-2 gap-4">
+                            <div>
+                                <p><strong>想定スキーム：</strong>自己都合退職、または少額の解決金（給与1〜2ヶ月分）による合意退職</p>
+                                <p class="mt-1"><strong>成立条件：</strong>離職票の事由変更、清算条項、口外禁止</p>
+                            </div>
+                            <div class="bg-slate-50 p-2 rounded">
+                                <p class="text-xs text-slate-500 mb-1">説得の切り口（対 労働者）</p>
+                                <p class="italic">「訴訟で解雇有効となれば金銭は得られず経歴にも傷がつくリスクがあります。早期解決を図りませんか」</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- パターン2 -->
+                    <div class="border-l-4 border-slate-500 bg-white p-4 rounded-r-lg shadow-sm border-y border-r border-slate-200">
+                        <h3 class="font-bold text-slate-700 mb-2">② 中間的心証（判断が微妙、立証不十分な場合）</h3>
+                        <div class="text-sm text-slate-700 grid md:grid-cols-2 gap-4">
+                            <div>
+                                <p><strong>想定スキーム：</strong>会社都合退職 ＋ 中程度の解決金（給与3〜6ヶ月分）による合意退職</p>
+                                <p class="mt-1"><strong>成立条件：</strong>清算条項、口外禁止、相互誹謗中傷の禁止</p>
+                            </div>
+                            <div class="bg-slate-50 p-2 rounded">
+                                <p class="text-xs text-slate-500 mb-1">説得の切り口（対 双方）</p>
+                                <p class="italic">「訴訟になれば時間と費用がかかり、勝敗の見通しも不確実です。互いに譲歩するのが合理的です」</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- パターン3 -->
+                    <div class="border-l-4 border-blue-500 bg-white p-4 rounded-r-lg shadow-sm border-y border-r border-slate-200">
+                        <h3 class="font-bold text-blue-700 mb-2">③ 労働者寄りの心証（解雇無効の可能性が高い場合）</h3>
+                        <div class="text-sm text-slate-700 grid md:grid-cols-2 gap-4">
+                            <div>
+                                <p><strong>想定スキーム：</strong>高額な解決金（給与6〜12ヶ月分以上）による合意退職、または復職</p>
+                                <p class="mt-1"><strong>成立条件：</strong>清算条項、口外禁止</p>
+                            </div>
+                            <div class="bg-slate-50 p-2 rounded">
+                                <p class="text-xs text-slate-500 mb-1">説得の切り口（対 会社）</p>
+                                <p class="italic">「解雇正当性の維持は困難であり、敗訴時のバックペイ雪だるま式増加リスクを遮断するため、一定の出費で終局させるべきです」</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. 訴訟見通し -->
+            <section id="step7" class="scroll-mt-24 bg-white rounded-xl shadow-sm p-6 sm:p-8 border border-slate-200">
+                <h2 class="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2 border-b pb-2">
+                    <span class="bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">7</span>
+                    訴訟に移行した場合の法的見通し
+                </h2>
+                
+                <div class="bg-slate-800 text-white rounded-xl p-6 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-10">
+                        <i data-lucide="scale" class="w-24 h-24"></i>
+                    </div>
+                    <div class="relative z-10 grid gap-6 md:grid-cols-2">
+                        <div>
+                            <h3 class="text-slate-300 text-sm mb-1">勝敗見立て（レンジ）</h3>
+                            <p class="font-bold text-lg text-white mb-4 border-b border-slate-600 pb-2">労働者側優勢 〜 拮抗</p>
+                            
+                            <h3 class="text-slate-300 text-sm mb-1">和解レンジの目安</h3>
+                            <p class="font-bold text-lg text-white">賃金月額の 3ヶ月分 〜 12ヶ月分</p>
+                            <p class="text-xs text-slate-400 mt-1">※勤続年数、年齢、再就職の難易度により変動</p>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <div class="bg-slate-700/50 p-3 rounded text-sm">
+                                <strong class="text-blue-300 block mb-1">認定のポイント</strong>
+                                会社側が「客観的な指導記録」と「解雇回避措置」を十分に立証できるかどうかが勝敗を分ける。
+                            </div>
+                            <div class="bg-slate-700/50 p-3 rounded text-sm">
+                                <strong class="text-orange-300 block mb-1">結論が覆る可能性のあるポイント</strong>
+                                労働者のミスが著しく企業秩序を乱すレベルであったことや、反抗的な態度が法廷で顕出された場合、会社側に有利に傾く可能性がある。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+        // Lucideアイコンの初期化
+        lucide.createIcons();
+    </script>
+</body>
+</html>

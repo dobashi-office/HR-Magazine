@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>メンタル疾患申し出時の対応フローとリスク管理</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+body { font-family: 'Noto Sans JP', sans-serif; background-color: #f8fafc; color: #1e293b; }
+.chart-container { position: relative; width: 100%; max-width: 600px; margin-left: auto; margin-right: auto; height: 350px; max-height: 400px; }
+@media (min-width: 768px) { .chart-container { height: 400px; } }
+.flow-arrow { text-align: center; font-size: 1.5rem; color: #94a3b8; margin: 0.5rem 0; }
+</style>
+</head>
+<body class="antialiased pb-20">
+
+<!-- Palette: Vibrant Professional (Deep Blue #1E3A8A, Teal #0D9488, Orange #F97316, Red #DC2626) -->
+<!-- Narrative Plan: 1. Introduction (The Shift in Perspective). 2. Structured CSS Flowchart (The Process). 3. Risk Assessment Polar Area Chart (The Danger Zones). -->
+<!-- Chart Choices: Flowchart -> CSS/HTML Grid (Goal: Organize/Process). Risk Impact -> Chart.js Polar Area (Goal: Compare severity). CONFIRMATION: NEITHER Mermaid JS NOR SVG were used anywhere in the output. -->
+
+<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
+    
+    <header class="text-center mb-12">
+        <h1 class="text-3xl md:text-5xl font-black text-[#1e3a8a] tracking-tight mb-4 border-b-4 border-[#f97316] inline-block pb-2">
+            能力不足者からの「メンタル疾患」申し出対応
+        </h1>
+        <p class="text-lg text-gray-600 mt-4 max-w-3xl mx-auto font-medium">
+            実務上の重大なリスクを回避するための、客観的・医療的根拠に基づくアプローチ
+        </p>
+    </header>
+
+    <section class="mb-16 bg-white rounded-2xl shadow-xl p-8 border-t-8 border-[#0d9488]">
+        <h2 class="text-2xl font-bold text-[#1e3a8a] mb-4">対応のパラダイムシフト</h2>
+        <p class="text-gray-700 mb-6 leading-relaxed">
+            従業員から「実はメンタル疾患があるんです」と申し出があった瞬間、会社側の対応方針を即座に切り替える必要があります。これまでの「能力不足に対する業務指導」から、一時的に<strong>「安全配慮義務に基づく健康管理」</strong>へと主眼を移さなければ、不当解雇や安全配慮義務違反の深刻な訴訟リスクを抱えることになります。
+        </p>
+        <div class="flex flex-col md:flex-row items-center justify-center gap-4 bg-gray-50 p-6 rounded-xl border border-gray-200">
+            <div class="flex-1 text-center p-4 bg-gray-200 rounded-lg text-gray-500 opacity-70">
+                <span class="block text-sm font-bold mb-1">Before</span>
+                <span class="text-lg font-bold">能力不足・サボりへの<br>「業務指導・懲戒」</span>
+            </div>
+            <div class="text-3xl font-bold text-[#f97316]">➡</div>
+            <div class="flex-1 text-center p-4 bg-[#0d9488] text-white rounded-lg shadow-md transform scale-105">
+                <span class="block text-sm font-bold text-teal-100 mb-1">After (申し出直後)</span>
+                <span class="text-lg font-bold">安全配慮義務に基づく<br>「健康状態の客観的把握」</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="mb-16">
+        <h2 class="text-3xl font-bold text-[#1e3a8a] mb-2 text-center">実務対応フローチャート</h2>
+        <p class="text-center text-gray-600 mb-8">自己申告を鵜呑みにせず、客観的事実と医療的根拠を積み上げるプロセス</p>
+
+        <div class="max-w-3xl mx-auto">
+            
+            <div class="bg-white border-l-8 border-[#1e3a8a] shadow-lg rounded-r-lg p-6 relative">
+                <div class="absolute -left-4 top-6 bg-[#1e3a8a] text-white w-8 h-8 rounded-full flex items-center justify-center font-bold shadow-md">1</div>
+                <h3 class="text-xl font-bold text-gray-800 mb-2">申し出の受領と現状の記録</h3>
+                <p class="text-gray-600 text-sm mb-3">いつ、どのような申し出があったかを客観的に記録します。</p>
+                <div class="bg-blue-50 p-3 rounded text-sm text-blue-900 font-medium">
+                    <strong>過去の事実の整理：</strong>「仕事ができない」「サボる」といった具体的な事実（日時、行動、指導内容）を整理・保管。<br>
+                    <span class="text-red-600 text-xs mt-1 inline-block">※注意: 申し出があったからといって過去の不良態度が免責されるわけではありません。</span>
+                </div>
+            </div>
+
+            <div class="flow-arrow">⬇</div>
+
+            <div class="bg-white border-l-8 border-[#1e3a8a] shadow-lg rounded-r-lg p-6 relative">
+                <div class="absolute -left-4 top-6 bg-[#1e3a8a] text-white w-8 h-8 rounded-full flex items-center justify-center font-bold shadow-md">2</div>
+                <h3 class="text-xl font-bold text-gray-800 mb-2">医療的根拠の確認（診断書の提出要求）</h3>
+                <p class="text-gray-600 text-sm mb-3">自己申告での判断（病気だ/嘘だ）を停止します。</p>
+                <div class="bg-blue-50 p-3 rounded text-sm text-blue-900 font-medium border border-blue-200">
+                    <strong>業務命令：</strong>「現在の健康状態で就業が可能かどうか」が明確に記載された、主治医の診断書提出を命じます。
+                </div>
+            </div>
+
+            <div class="flow-arrow">⬇</div>
+            <div class="text-center mb-4 font-bold text-gray-500">診断書の提出状況による分岐</div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <div class="bg-white rounded-xl shadow-md border-t-8 border-[#0d9488] flex flex-col">
+                    <div class="p-4 bg-teal-50 border-b border-teal-100">
+                        <h4 class="text-lg font-bold text-[#0d9488] text-center">【ルートA】 診断書が提出された場合</h4>
+                    </div>
+                    <div class="p-5 flex-grow">
+                        <ol class="list-decimal list-inside space-y-4 text-sm text-gray-700">
+                            <li class="font-bold text-gray-900">産業医（会社指定医）の面談実施・医療照会の検討
+                                <p class="font-normal text-gray-600 mt-1 pl-5">主治医の診断書にも偏りが存在します。必ず「自社の業務が遂行可能か」の意見を求めます。※医療照会５点セットの準備</p>
+                            </li>
+                            <li class="font-bold text-gray-900">就業可否の判断と対応
+                                <div class="font-normal mt-2 pl-5 space-y-3">
+                                    <div class="bg-gray-50 p-2 rounded border-l-4 border-gray-400">
+                                        <span class="font-bold text-gray-800">ア. 就業不可・休職を要する場合</span><br>
+                                        就業規則に基づき<strong>休職命令</strong>を発令し、治療に専念させる。
+                                    </div>
+                                    <div class="bg-teal-50 p-2 rounded border-l-4 border-[#0d9488]">
+                                        <span class="font-bold text-[#0d9488]">イ. 就業可能（条件付き・要配慮）</span><br>
+                                        産業医意見に基づく<strong>合理的配慮</strong>（業務軽減等）を実施。<br>
+                                        配慮下で業務指導を再開。それでも業務遂行が著しく劣る場合は「能力不足」として退職勧奨・解雇プロセスへ。
+                                    </div>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md border-t-8 border-[#f97316] flex flex-col">
+                    <div class="p-4 bg-orange-50 border-b border-orange-100">
+                        <h4 class="text-lg font-bold text-[#ea580c] text-center">【ルートB】 提出を拒否・遅延する場合</h4>
+                    </div>
+                    <div class="p-5 flex-grow">
+                        <ol class="list-decimal list-inside space-y-4 text-sm text-gray-700">
+                            <li class="font-bold text-gray-900">受診および提出の業務命令
+                                <p class="font-normal text-gray-600 mt-1 pl-5">就業規則上の根拠（健康診断受診義務や就業禁止条項）に基づき、明確に期限を定めて提出を命じます。</p>
+                            </li>
+                            <li class="font-bold text-gray-900">労務提供の受領拒否（自宅待機）
+                                <p class="font-normal text-gray-600 mt-1 pl-5 bg-orange-50 p-2 rounded mt-2">
+                                    「安全配慮義務上、健康状態が不明な者を就労させることはできない」として、<strong>就労を拒否</strong>します。<br>
+                                    <span class="text-xs text-orange-800 mt-1 block">※この間の給与は本人の債務不履行として無給とする余地が強いですが、就業規則を確認してください。</span>
+                                </p>
+                            </li>
+                            <li class="font-bold text-gray-900">懲戒処分の検討
+                                <p class="font-normal text-gray-600 mt-1 pl-5">再三の業務命令に従わない場合は、業務命令違反としての懲戒処分を検討します。</p>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mb-10 bg-white rounded-2xl shadow-xl p-8 border-t-8 border-[#dc2626]">
+        <h2 class="text-2xl font-bold text-gray-900 mb-2">重大なリスクと陥りやすい「論理の穴」</h2>
+        <p class="text-gray-600 mb-8 leading-relaxed">
+            初動対応を誤ると、労働審判等で会社側が圧倒的に不利な立場に立たされます。以下は、会社側が陥りやすい4つの致命的なミスと、その企業へのインパクト（危険度）を可視化したものです。
+        </p>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            
+            <div class="chart-container">
+                <canvas id="riskChart"></canvas>
+            </div>
+
+            <div class="space-y-4">
+                <div class="p-4 rounded-lg bg-red-50 border-l-4 border-red-600">
+                    <h4 class="font-bold text-red-900 text-lg mb-1">1. 能力不足と健康問題の混同リスク</h4>
+                    <p class="text-sm text-gray-700">
+                        <span class="font-semibold text-red-700">誤り:</span> 病気だと言われた途端に、過去の能力不足を理由に解雇する。<br>
+                        <span class="font-semibold text-red-700">結果:</span> 「一時的な能力低下での解雇権濫用」と判断され、<strong>不当解雇</strong>となる可能性が極めて高い。
+                    </p>
+                </div>
+                
+                <div class="p-4 rounded-lg bg-orange-50 border-l-4 border-orange-500">
+                    <h4 class="font-bold text-orange-900 text-lg mb-1">2. 自己申告の鵜呑み（過剰配慮）リスク</h4>
+                    <p class="text-sm text-gray-700">
+                        <span class="font-semibold text-orange-700">誤り:</span> 診断書を取らず本人の言う通りに業務を減らし、指導をやめる。<br>
+                        <span class="font-semibold text-orange-700">結果:</span> 本人の「逃げ道」を公認し、他従業員の不公平感が増大。<strong>組織崩壊</strong>を招く。
+                    </p>
+                </div>
+
+                <div class="p-4 rounded-lg bg-yellow-50 border-l-4 border-yellow-500">
+                    <h4 class="font-bold text-yellow-900 text-lg mb-1">3. 「病気なら仕方ない」免責の論理の穴</h4>
+                    <p class="text-sm text-gray-700">
+                        <span class="font-semibold text-yellow-700">事実:</span> メンタル疾患でも労務提供義務は消滅しない。<br>
+                        <span class="font-semibold text-yellow-700">対策:</span> 合理的配慮後も状態が改善しない場合、それは「病気」から<strong>「債務不履行(能力不足)」</strong>の問題に切り替わる。配慮後の記録が解雇の根拠となる。
+                    </p>
+                </div>
+
+                <div class="p-4 rounded-lg bg-gray-100 border-l-4 border-gray-800">
+                    <h4 class="font-bold text-gray-900 text-lg mb-1">4. 放置による安全配慮義務違反リスク</h4>
+                    <p class="text-sm text-gray-700">
+                        <span class="font-semibold text-gray-700">誤り:</span> 申し出を無視して従来通り厳しく指導を続ける。<br>
+                        <span class="font-semibold text-gray-700">結果:</span> 症状が悪化し最悪の事態に至った場合、莫大な<strong>損害賠償責任</strong>を負う。「申し出」時点で調査義務が発生する。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const ctx = document.getElementById('riskChart').getContext('2d');
+    
+    const riskData = {
+        labels: [
+            ["能力不足と", "健康問題の混同"], 
+            ["自己申告の鵜呑みに", "よる過剰配慮"], 
+            ["病気なら仕方ないという", "免責の論理の穴"], 
+            ["放置による", "安全配慮義務違反"]
+        ],
+        datasets: [{
+            label: '企業へのダメージ・危険度スコア',
+            data: [9, 8, 7, 10], 
+            backgroundColor: [
+                'rgba(220, 38, 38, 0.7)',  
+                'rgba(249, 115, 22, 0.7)', 
+                'rgba(234, 179, 8, 0.7)',  
+                'rgba(31, 41, 55, 0.7)'    
+            ],
+            borderColor: [
+                'rgba(220, 38, 38, 1)',
+                'rgba(249, 115, 22, 1)',
+                'rgba(234, 179, 8, 1)',
+                'rgba(31, 41, 55, 1)'
+            ],
+            borderWidth: 1
+        }]
+    };
+
+    const riskChart = new Chart(ctx, {
+        type: 'polarArea',
+        data: riskData,
+        options: {
+            maintainAspectRatio: false,
+            responsive: true,
+            scales: {
+                r: {
+                    min: 0,
+                    max: 10,
+                    ticks: {
+                        display: false 
+                    },
+                    grid: {
+                        color: 'rgba(0, 0, 0, 0.05)'
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        font: { family: "'Noto Sans JP', sans-serif", size: 12 }
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            if (Array.isArray(label)) {
+                              return label.join(' ');
+                            } else {
+                              return label;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>企業の安全配慮義務とメンタルヘルス対策</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #f1f5f9;
+            color: #334155;
+        }
+        .print-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        @media print {
+            body { background: white; }
+            .print-container { box-shadow: none; max-width: 100%; margin: 0; padding: 0; }
+            .no-print { display: none; }
+            .break-inside-avoid { break-inside: avoid; }
+        }
+        .point-badge {
+            background-color: #1e40af;
+            color: white;
+            font-weight: bold;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <!-- Action Button -->
+    <div class="max-w-4xl mx-auto mb-4 flex justify-end no-print">
+        <button onclick="window.print()" class="bg-slate-700 text-white px-4 py-2 rounded shadow hover:bg-slate-800 transition items-center gap-2 flex">
+            <i class="fas fa-print"></i> 印刷・PDF保存
+        </button>
+    </div>
+
+    <!-- Main Document -->
+    <div class="print-container p-8 md:p-12 rounded-lg">
+        
+        <!-- Header -->
+        <header class="border-b-4 border-slate-700 pb-6 mb-8">
+            <span class="bg-slate-700 text-white text-xs font-bold px-2 py-1 rounded mb-2 inline-block">企業向け実務ガイド</span>
+            <h1 class="text-2xl md:text-3xl font-bold text-slate-800 mt-1 leading-tight">
+                メンタルヘルス不調と安全配慮義務
+            </h1>
+            <p class="text-slate-600 mt-2 font-bold text-lg">― 裁判例から学ぶ「企業が守るべきライン」 ―</p>
+        </header>
+
+        <!-- Intro -->
+        <section class="mb-8">
+            <p class="leading-relaxed">
+                従業員がメンタルヘルス不調に陥った際、企業に「安全配慮義務違反」があったかどうかが厳しく問われます。<br>
+                裁判例の傾向から、企業が特に注意すべき<strong>「3つの判断基準」</strong>を整理しました。
+            </p>
+        </section>
+
+        <!-- Main Points -->
+        <section class="mb-10 space-y-6">
+            
+            <!-- Point 1: Working Hours -->
+            <div class="bg-white border-l-8 border-red-500 shadow-sm rounded-r-lg p-6 break-inside-avoid">
+                <div class="flex items-center mb-3">
+                    <span class="point-badge bg-red-600 mr-3">重要ポイント 1</span>
+                    <h2 class="text-xl font-bold text-slate-800">「労働時間」は決定的な証拠になる</h2>
+                </div>
+                <div class="ml-2 md:ml-0">
+                    <p class="text-sm text-slate-600 mb-3 leading-relaxed">
+                        長時間労働の有無は、企業の責任を判断する上で最も客観的かつ重視される要素です。
+                    </p>
+                    <div class="bg-red-50 p-4 rounded border border-red-100">
+                        <ul class="text-sm space-y-2 font-bold text-red-800">
+                            <li class="flex items-start"><i class="fas fa-exclamation-triangle mt-1 mr-2"></i>月80時間を超える時間外労働は「危険水域」</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle mt-1 mr-2"></i>出向者やテレワーク社員を含め、労働時間を正確に把握できていますか？</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Point 2: Consultation System -->
+            <div class="bg-white border-l-8 border-blue-500 shadow-sm rounded-r-lg p-6 break-inside-avoid">
+                <div class="flex items-center mb-3">
+                    <span class="point-badge bg-blue-600 mr-3">重要ポイント 2</span>
+                    <h2 class="text-xl font-bold text-slate-800">「相談窓口」の実効性</h2>
+                </div>
+                <div class="ml-2 md:ml-0">
+                    <p class="text-sm text-slate-600 mb-3 leading-relaxed">
+                        単に「窓口を設置している」だけでは不十分です。従業員が孤立せず、実際に声を上げやすい環境（心理的安全性）があるかが問われます。
+                    </p>
+                    <ul class="text-sm space-y-2 text-slate-700 ml-1">
+                        <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-2"></i>定期的な面談や声かけを行っているか</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-2"></i>（海外等の場合）現地の言語や生活へのサポート体制はあるか</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Point 3: Action after SOS -->
+            <div class="bg-white border-l-8 border-emerald-500 shadow-sm rounded-r-lg p-6 break-inside-avoid">
+                <div class="flex items-center mb-3">
+                    <span class="point-badge bg-emerald-600 mr-3">重要ポイント 3</span>
+                    <h2 class="text-xl font-bold text-slate-800">SOSに対する「具体的アクション」</h2>
+                </div>
+                <div class="ml-2 md:ml-0">
+                    <p class="text-sm text-slate-600 mb-3 leading-relaxed">
+                        ここが最も重要です。従業員から「つらい」「業務がきつい」というアラートがあった際、会社が<strong>具体的な業務調整</strong>を行ったかが裁判での勝敗を分けます。
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-3">
+                        <div class="bg-gray-100 p-3 rounded text-sm text-gray-500">
+                            <p class="font-bold mb-1"><i class="fas fa-times-circle mr-1"></i>悪い対応</p>
+                            「頑張れ」と励ますだけで、業務量は変わらない。
+                        </div>
+                        <div class="bg-emerald-50 p-3 rounded text-sm text-emerald-800 border border-emerald-200">
+                            <p class="font-bold mb-1"><i class="fas fa-check-circle mr-1"></i>良い対応</p>
+                            業務を他の社員に引き継ぐ、納期を延ばすなど、<strong>物理的な負担軽減</strong>を行う。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Case Study Reference -->
+        <section class="bg-slate-50 border border-slate-200 rounded-lg p-6 mb-8 break-inside-avoid">
+            <h2 class="text-lg font-bold text-slate-800 mb-3 flex items-center border-b pb-2 border-slate-300">
+                <i class="fas fa-book-open text-slate-500 mr-2"></i>【参考事例】適切な対応が評価されたケース
+            </h2>
+            <div class="text-sm text-slate-600 mb-4">
+                <span class="font-bold">神戸地裁 令和7年1月15日判決（川崎重工業事件）</span><br>
+                海外出向中の社員が自殺した事案において、裁判所は以下の点を評価し、<strong>「会社に法的責任はない（安全配慮義務違反なし）」</strong>と判断しました。
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-4 text-sm">
+                <div class="bg-white p-3 rounded shadow-sm border border-slate-200">
+                    <div class="font-bold text-slate-700 mb-1 border-b border-slate-100 pb-1">①労働時間</div>
+                    <p class="text-slate-500">残業は月10時間程度と少なく、休日振替も適切に行われていた。</p>
+                </div>
+                <div class="bg-white p-3 rounded shadow-sm border border-slate-200">
+                    <div class="font-bold text-slate-700 mb-1 border-b border-slate-100 pb-1">②サポート体制</div>
+                    <p class="text-slate-500">語学研修や現地の通訳配置など、ストレス軽減の準備が十分だった。</p>
+                </div>
+                <div class="bg-white p-3 rounded shadow-sm border border-slate-200">
+                    <div class="font-bold text-slate-700 mb-1 border-b border-slate-100 pb-1">③SOS対応</div>
+                    <p class="text-slate-500">「業務負荷が高い」との訴えに対し、本社が業務を引き取る対応をした。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conclusion -->
+        <div class="bg-indigo-50 border-l-4 border-indigo-500 p-4 rounded-r text-sm text-indigo-900 font-bold">
+            <p class="mb-1 text-lg">まとめ</p>
+            <p>
+                安全配慮義務とは「結果責任」ではありません。<br>
+                日頃から労働時間を適正に管理し、相談があれば具体的に動くこと。この積み重ねが、従業員の命を守り、結果として会社のリスク防衛にもつながります。
+            </p>
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-8 text-right text-xs text-slate-400">
+            <p>発行：土橋社労士事務所</p>
+            <p>2026年（令和8年）2月改定</p>
+        </footer>
+
+    </div>
+</body>
+</html>
