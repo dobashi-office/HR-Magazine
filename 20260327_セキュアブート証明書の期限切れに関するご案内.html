@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>【大切なお知らせ】PCのセキュリティ設定に関するご確認のお願い</title>
+  <style>
+    /* ===== Reset & Base ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', 'Hiragino Sans', 'Meiryo', sans-serif;
+      background: #f4f7f6;
+      color: #333333;
+      line-height: 1.8;
+      padding: 32px 16px 64px;
+    }
+
+    /* ===== Wrapper ===== */
+    .wrapper {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    /* ===== Header Banner ===== */
+    .header-banner {
+      background: linear-gradient(135deg, #2b5876 0%, #4e4376 100%);
+      border-radius: 16px;
+      padding: 40px 36px;
+      color: #fff;
+      margin-bottom: 32px;
+      position: relative;
+      overflow: hidden;
+    }
+    .header-banner::before {
+      content: '';
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 220px; height: 220px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 50%;
+    }
+    .header-banner::after {
+      content: '';
+      position: absolute;
+      bottom: -60px; left: -30px;
+      width: 180px; height: 180px;
+      background: rgba(255,255,255,0.04);
+      border-radius: 50%;
+    }
+    .badge {
+      display: inline-block;
+      background: #3b82f6;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      padding: 6px 16px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+    .header-banner h1 {
+      font-size: clamp(20px, 4vw, 24px);
+      font-weight: 700;
+      line-height: 1.5;
+      margin-bottom: 12px;
+      position: relative; z-index: 1;
+    }
+    .header-banner p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.9);
+      position: relative; z-index: 1;
+    }
+
+    /* ===== Alert Box ===== */
+    .alert-box {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-left: 6px solid #22c55e;
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin-bottom: 32px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .alert-icon {
+      font-size: 24px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .alert-box p {
+      font-size: 15px;
+      color: #166534;
+      font-weight: 500;
+    }
+    .alert-box strong {
+      color: #15803d;
+    }
+
+    /* ===== Section Title ===== */
+    .section-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #2b5876;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-title .icon {
+      font-size: 22px;
+    }
+
+    /* ===== Risk Cards ===== */
+    .risk-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .risk-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 22px 20px;
+      border-top: 4px solid;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .risk-card.orange { border-color: #f97316; }
+    .risk-card.teal   { border-color: #14b8a6; }
+    .risk-card.blue   { border-color: #3b82f6; }
+
+    .risk-card .card-icon { font-size: 28px; margin-bottom: 10px; }
+    .risk-card h3 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #334155;
+    }
+    .risk-card ul {
+      list-style: none;
+      padding: 0;
+    }
+    .risk-card ul li {
+      font-size: 13px;
+      color: #475569;
+      padding: 4px 0;
+      padding-left: 16px;
+      position: relative;
+    }
+    .risk-card ul li::before {
+      content: '・';
+      position: absolute;
+      left: 0;
+      color: #94a3b8;
+    }
+    .risk-card .note {
+      margin-top: 10px;
+      font-size: 12px;
+      color: #0369a1;
+      background: #f0f9ff;
+      border-radius: 6px;
+      padding: 8px 10px;
+    }
+
+    /* ===== Steps Section ===== */
+    .steps-section {
+      background: #fff;
+      border-radius: 16px;
+      padding: 28px 28px;
+      margin-bottom: 32px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .steps-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 4px;
+    }
+    .steps-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 12px 0;
+      border-bottom: 1px dashed #e2e8f0;
+    }
+    .steps-list li:last-child { border-bottom: none; }
+    .step-num {
+      width: 28px; height: 28px;
+      background: #e0f2fe;
+      color: #0369a1;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 13px;
+      flex-shrink: 0;
+    }
+    .step-text { font-size: 14px; color: #334155; padding-top: 3px; }
+    .step-text code {
+      background: #f1f5f9;
+      color: #334155;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-family: 'Consolas', monospace;
+      font-size: 13px;
+      border: 1px solid #cbd5e1;
+    }
+
+    /* ===== Result Table ===== */
+    .result-section {
+      background: #fff;
+      border-radius: 16px;
+      padding: 28px 28px;
+      margin-bottom: 32px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .result-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      font-size: 14px;
+    }
+    .result-table th {
+      background: #f8fafc;
+      color: #475569;
+      padding: 12px 16px;
+      text-align: left;
+      font-size: 13px;
+      border-bottom: 2px solid #e2e8f0;
+    }
+    .result-table td {
+      padding: 16px 16px;
+      border-bottom: 1px solid #f1f5f9;
+      vertical-align: top;
+    }
+    .result-table tr:last-child td { border-bottom: none; }
+
+    .status-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+    .status-ok    { background: #dcfce7; color: #166534; }
+    .status-warn  { background: #ffedd5; color: #9a3412; }
+    .status-info  { background: #e0f2fe; color: #075985; }
+
+    /* ===== Action Section ===== */
+    .action-section {
+      background: #fff;
+      border-radius: 16px;
+      padding: 28px 28px;
+      margin-bottom: 32px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .action-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 4px;
+    }
+    .action-list li {
+      display: flex;
+      gap: 14px;
+      padding: 14px 0;
+      border-bottom: 1px dashed #e2e8f0;
+    }
+    .action-list li:last-child { border-bottom: none; }
+    .action-icon-wrap {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+    .bg-light-blue { background: #e0f2fe; }
+    .bg-light-green{ background: #dcfce7; }
+    .bg-light-gray { background: #f1f5f9; }
+    .action-text h4 { font-size: 14px; font-weight: 700; margin-bottom: 4px; color: #334155; }
+    .action-text p  { font-size: 13px; color: #64748b; }
+    .tag-list { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+    .tag {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      color: #64748b;
+      font-size: 12px;
+      padding: 2px 10px;
+      border-radius: 20px;
+    }
+
+    /* ===== Priority Section ===== */
+    .priority-section {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 24px 28px;
+      margin-bottom: 32px;
+    }
+    .priority-section .section-title { color: #475569; margin-bottom: 12px; font-size: 16px;}
+    .priority-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .priority-chip {
+      background: #fff;
+      border: 1px solid #cbd5e1;
+      color: #475569;
+      padding: 6px 16px;
+      border-radius: 30px;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* ===== Footer ===== */
+    .footer-box {
+      text-align: center;
+      color: #64748b;
+      font-size: 14px;
+      padding: 20px 0;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 520px) {
+      .header-banner { padding: 28px 20px; }
+      .steps-section, .result-section, .action-section { padding: 20px 16px; }
+      .result-table th, .result-table td { padding: 12px 10px; font-size: 13px; display: block; width: 100%;}
+      .result-table tr { border-bottom: 1px solid #e2e8f0; display: block; padding-bottom: 10px; margin-bottom: 10px;}
+      .result-table th { border-bottom: none; padding-bottom: 0;}
+      .result-table td { border-bottom: none; padding-top: 4px; padding-bottom: 4px;}
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- ===== Header ===== -->
+  <div class="header-banner">
+    <span class="badge">ℹ️ 大切なお知らせ</span>
+    <h1>PCのセキュリティ機能（セキュアブート）に<br>関するご確認のお願い</h1>
+    <p>対象時期：2026年6月〜10月頃 ／ 対象：社内でご利用中のPC</p>
+  </div>
+
+  <!-- ===== Alert ===== -->
+  <div class="alert-box">
+    <div class="alert-icon">💡</div>
+    <p>
+      2026年6月〜10月にかけて、PCの起動を守るセキュリティ機能（セキュアブート）の<strong>証明書が更新時期</strong>を迎えます。<br>
+      この更新に伴い、一部のPCで起動に時間がかかったり、設定の確認が必要になる場合がございます。<br>
+      今後も安心して業務を行っていただくため、念のため<strong>お時間のある際に社内PCの設定状況をご確認</strong>いただけますと幸いです。
+    </p>
+  </div>
+
+  <!-- ===== Risks ===== -->
+  <div class="section-title"><span class="icon">👀</span> 念のため知っておいていただきたいこと</div>
+  <div class="risk-grid">
+
+    <div class="risk-card orange">
+      <div class="card-icon">💻</div>
+      <h3>PCの起動への影響について</h3>
+      <ul>
+        <li>自動更新のタイミングで再起動が必要になる場合があります</li>
+        <li>ごく稀に、一時的に起動できなくなるケースが報告されています</li>
+      </ul>
+      <div class="note">※ 自動更新がスムーズに行われない場合に備えた確認です。</div>
+    </div>
+
+    <div class="risk-card teal">
+      <div class="card-icon">🛡️</div>
+      <h3>セキュリティ機能の維持</h3>
+      <ul>
+        <li>機能が「無効」になっていると、見えないウイルス等への防御力が下がる可能性があります</li>
+      </ul>
+      <div class="note">※ より安全にお使いいただくために有効化をお勧めします。</div>
+    </div>
+
+    <div class="risk-card blue">
+      <div class="card-icon">🏢</div>
+      <h3>社内ネットワーク設定の影響</h3>
+      <ul>
+        <li>社内システムでPCの自動更新を制限している場合、必要なプログラムが届かないことがあります</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- ===== Steps ===== -->
+  <div class="steps-section">
+    <div class="section-title"><span class="icon">🔍</span> 設定状況の確認方法（1台あたり約1分）</div>
+    <ul class="steps-list">
+      <li>
+        <div class="step-num">1</div>
+        <div class="step-text">画面下の <strong>「Windowsアイコン」</strong> を右クリックします</div>
+      </li>
+      <li>
+        <div class="step-num">2</div>
+        <div class="step-text">メニューから <strong>「ファイル名を指定して実行」</strong> をクリックします</div>
+      </li>
+      <li>
+        <div class="step-num">3</div>
+        <div class="step-text"><code>msinfo32</code> と入力して <strong>Enterキー</strong> を押します</div>
+      </li>
+      <li>
+        <div class="step-num">4</div>
+        <div class="step-text"><strong>「システム情報」</strong> という画面が開きます</div>
+      </li>
+      <li>
+        <div class="step-num">5</div>
+        <div class="step-text">右側の項目から <strong>「セキュアブートの状態」</strong> を探して確認します</div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- ===== Results ===== -->
+  <div class="result-section">
+    <div class="section-title"><span class="icon">📋</span> 確認結果と今後のご対応について</div>
+    <table class="result-table">
+      <thead>
+        <tr>
+          <th style="width: 25%;">表示される状態</th>
+          <th style="width: 20%;">判断</th>
+          <th style="width: 55%;">対応内容</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="status-badge status-ok">✅ 有効</span></td>
+          <td>問題ありません</td>
+          <td>現在の設定で大丈夫です。引き続き定期的なWindows Updateの実施をお願いします。</td>
+        </tr>
+        <tr>
+          <td><span class="status-badge status-warn">⚠️ 無効</span></td>
+          <td>設定変更を推奨</td>
+          <td>より安全にご利用いただくため、お時間のある際にBIOS設定からセキュアブートを「有効（Enabled）」にご変更ください。</td>
+        </tr>
+        <tr>
+          <td><span class="status-badge status-info">💡 サポートされていません</span></td>
+          <td>機能非対応</td>
+          <td>旧型の機種に見られる表示です。すぐにお使いいただけなくなるわけではありませんが、今後のセキュリティ対策として、時期を見てお買い替えをご検討ください。</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== Actions ===== -->
+  <div class="action-section">
+    <div class="section-title"><span class="icon">🌱</span> 日頃からお願いしたいセキュリティ対策</div>
+    <ul class="action-list">
+      <li>
+        <div class="action-icon-wrap bg-light-blue">🔄</div>
+        <div class="action-text">
+          <h4>Windows Update の実施</h4>
+          <p>PCを最新の状態に保つことで、証明書の更新等にもスムーズに対応できます。</p>
+        </div>
+      </li>
+      <li>
+        <div class="action-icon-wrap bg-light-green">🔁</div>
+        <div class="action-text">
+          <h4>定期的な再起動</h4>
+          <p>更新プログラムをしっかりと適用させるため、定期的なPCの再起動を習慣づけてください。</p>
+        </div>
+      </li>
+      <li>
+        <div class="action-icon-wrap bg-light-gray">🔎</div>
+        <div class="action-text">
+          <h4>社内IT設定の確認</h4>
+          <p>更新を制限する設定がないか、必要に応じてIT担当者様にご確認ください。</p>
+          <div class="tag-list">
+            <span class="tag">Windows Update 制限</span>
+            <span class="tag">BIOS 更新制限</span>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- ===== Priority ===== -->
+  <div class="priority-section">
+    <div class="section-title"><span class="icon">📌</span> 特に一度ご確認をお勧めするPC</div>
+    <div class="priority-chips">
+      <div class="priority-chip">🕐 5年以上長く使用されているPC</div>
+      <div class="priority-chip">🪟 Windows 10 のPC</div>
+      <div class="priority-chip">⛔ 長らく更新を行っていないPC</div>
+    </div>
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <div class="footer-box">
+    <p>定期的なご確認で、今後も安心してPCをご利用いただけます。</p>
+  </div>
+
+</div>
+</body>
+</html>
