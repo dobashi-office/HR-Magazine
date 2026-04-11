@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>カスハラ対策 実務対応ガイド｜令和8年10月施行</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #1c1c2e;
+  --ink-light: #3b3b5c;
+  --ink-muted: #6e6e8a;
+  --bg: #f9fafb;
+  --bg-warm: #f0f4f8;
+  --bg-card: #ffffff;
+  --accent: #d35400;
+  --accent-dark: #a04000;
+  --accent-light: #e67e22;
+  --navy: #1b2a4a;
+  --navy-light: #2c4270;
+  --teal: #0e6655;
+  --teal-light: #17a589;
+  --red: #c0392b;
+  --red-light: #e74c3c;
+  --border: #dce1e8;
+  --shadow: rgba(28,28,46,0.07);
+  --radius: 6px;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family:'Noto Sans JP',sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.85;
+  font-size:15px;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* HERO */
+.hero {
+  background:linear-gradient(135deg,#1b2a4a 0%,#d35400 100%);
+  color:#fff;
+  padding:80px 40px 60px;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before {
+  content:'';
+  position:absolute;
+  top:-40%;right:-15%;
+  width:500px;height:500px;
+  background:radial-gradient(circle,rgba(255,255,255,0.05) 0%,transparent 70%);
+  border-radius:50%;
+}
+.hero::after {
+  content:'';position:absolute;bottom:0;left:0;right:0;height:4px;
+  background:linear-gradient(90deg,var(--red),var(--accent),#f39c12);
+}
+.hero-inner { max-width:960px;margin:0 auto;position:relative;z-index:1; }
+.hero-badge {
+  display:inline-block;
+  background:rgba(255,255,255,0.12);
+  border:1px solid rgba(255,255,255,0.2);
+  padding:6px 18px;border-radius:30px;
+  font-size:13px;font-weight:500;letter-spacing:0.08em;margin-bottom:24px;
+  backdrop-filter:blur(4px);
+}
+.hero h1 {
+  font-family:'Noto Serif JP',serif;
+  font-size:clamp(26px,4vw,40px);font-weight:700;line-height:1.4;margin-bottom:16px;
+}
+.hero h1 em { font-style:normal;color:#ffd700; }
+.hero-sub { font-size:16px;opacity:0.85;font-weight:300;max-width:640px; }
+.hero-meta { margin-top:32px;display:flex;gap:28px;flex-wrap:wrap;font-size:13px;opacity:0.7; }
+
+/* LAYOUT */
+.container { max-width:960px;margin:0 auto;padding:0 24px; }
+
+/* OVERVIEW BOX */
+.overview-box {
+  background:var(--bg-warm);border-left:4px solid var(--accent);
+  padding:32px 36px;margin:48px auto;max-width:960px;
+  border-radius:0 var(--radius) var(--radius) 0;
+}
+.overview-box h2 {
+  font-family:'Noto Serif JP',serif;font-size:20px;color:var(--accent);
+  margin-bottom:16px;display:flex;align-items:center;gap:10px;
+}
+.overview-box h2::before { content:'📋';font-size:22px; }
+
+/* 5 MEASURES GRID */
+.measures-grid {
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:16px;margin-top:20px;
+}
+.measure-card {
+  background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:20px;position:relative;
+}
+.measure-num {
+  position:absolute;top:-10px;left:16px;
+  background:var(--navy);color:#fff;width:28px;height:28px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;
+}
+.measure-card h3 { font-size:14px;font-weight:700;margin-bottom:6px;margin-top:6px;color:var(--navy); }
+.measure-card p { font-size:13px;color:var(--ink-muted);line-height:1.7; }
+
+/* SECTION */
+.section { margin:56px auto;max-width:960px; }
+.section-header {
+  display:flex;align-items:center;gap:14px;margin-bottom:28px;
+  padding-bottom:16px;border-bottom:2px solid var(--ink);
+}
+.section-icon {
+  width:44px;height:44px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;
+}
+.section-header h2 { font-family:'Noto Serif JP',serif;font-size:22px;font-weight:700;line-height:1.3; }
+.section-header .section-sub { font-size:13px;color:var(--ink-muted);font-weight:400; }
+
+/* CARDS */
+.card-grid { display:grid;gap:24px; }
+.card {
+  background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);
+  overflow:hidden;box-shadow:0 2px 12px var(--shadow);transition:box-shadow 0.2s;
+}
+.card:hover { box-shadow:0 4px 24px rgba(28,28,46,0.12); }
+.card-head {
+  padding:20px 24px;display:flex;align-items:center;gap:14px;
+  border-bottom:1px solid var(--border);
+}
+.card-head h3 { font-size:17px;font-weight:700;flex:1; }
+.card-body { padding:24px; }
+.card-body p { margin-bottom:14px;font-size:14.5px;color:var(--ink-light); }
+
+.card-sub {
+  margin-top:20px;padding:18px 20px;border-radius:var(--radius);border:1px solid;
+}
+.sub-point { background:#f0f4ff;border-color:#c8d8f0; }
+.sub-do { background:#f0f8f0;border-color:#c8e0c8; }
+.sub-warn { background:#fff8f0;border-color:#f0d8b0; }
+.sub-danger { background:#fdf2f2;border-color:#f0c8c8; }
+
+.card-sub h4 { font-size:13px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px; }
+.sub-point h4 { color:var(--navy); }
+.sub-do h4 { color:#2e7d32; }
+.sub-warn h4 { color:#b8860b; }
+.sub-danger h4 { color:var(--red); }
+
+.card-sub ul { list-style:none;padding:0; }
+.card-sub li {
+  position:relative;padding-left:20px;margin-bottom:8px;
+  font-size:13.5px;line-height:1.75;color:var(--ink-light);
+}
+.card-sub li::before { content:'▸';position:absolute;left:0;color:var(--ink-muted);font-size:11px;top:2px; }
+
+/* FLOW DIAGRAM */
+.flow-section { margin:56px auto;max-width:960px; }
+.flow-section h2 {
+  font-family:'Noto Serif JP',serif;font-size:22px;margin-bottom:24px;
+  padding-bottom:12px;border-bottom:2px solid var(--ink);
+}
+.flow-steps { display:flex;flex-direction:column;gap:0; }
+.flow-step {
+  display:flex;gap:20px;align-items:flex-start;position:relative;
+  padding-bottom:24px;
+}
+.flow-step:not(:last-child)::before {
+  content:'';position:absolute;left:19px;top:40px;bottom:0;
+  width:2px;background:var(--border);
+}
+.flow-num {
+  width:40px;height:40px;border-radius:50%;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;font-weight:700;color:#fff;z-index:1;
+}
+.flow-content {
+  background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:18px 22px;flex:1;
+}
+.flow-content h3 { font-size:15px;font-weight:700;margin-bottom:6px; }
+.flow-content p { font-size:13.5px;color:var(--ink-light);line-height:1.7; }
+
+/* COMPARISON TABLE */
+.compare-table {
+  width:100%;border-collapse:collapse;margin-top:20px;
+  background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);
+  overflow:hidden;
+}
+.compare-table th {
+  background:var(--navy);color:#fff;padding:14px 18px;
+  text-align:left;font-size:13px;font-weight:700;
+}
+.compare-table td {
+  padding:14px 18px;border-bottom:1px solid var(--border);
+  font-size:13.5px;color:var(--ink-light);line-height:1.7;
+}
+.compare-table tr:last-child td { border-bottom:none; }
+.compare-table tr:nth-child(even) td { background:#f8f9fb; }
+
+/* DARK BOX */
+.dark-box {
+  background:linear-gradient(135deg,#1b2a4a,#0e6655);
+  color:#fff;padding:40px;border-radius:var(--radius);
+  margin:56px auto;max-width:960px;position:relative;overflow:hidden;
+}
+.dark-box::before {
+  content:'⚠';position:absolute;top:10px;right:30px;font-size:80px;opacity:0.06;
+}
+.dark-box h2 { font-family:'Noto Serif JP',serif;font-size:20px;margin-bottom:20px;color:#ffd700; }
+.dark-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px; }
+.dark-item {
+  background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);
+  border-radius:var(--radius);padding:20px;
+}
+.dark-item h3 { font-size:15px;font-weight:700;margin-bottom:8px;color:#ffd700; }
+.dark-item p { font-size:13px;opacity:0.85;line-height:1.75; }
+
+/* CHECKLIST */
+.checklist-section { margin:56px auto;max-width:960px; }
+.checklist-section h2 {
+  font-family:'Noto Serif JP',serif;font-size:22px;margin-bottom:24px;
+  padding-bottom:12px;border-bottom:2px solid var(--ink);
+}
+.checklist { display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px; }
+.check-item {
+  background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:18px 20px;display:flex;gap:14px;align-items:flex-start;
+}
+.check-box {
+  width:22px;height:22px;border:2px solid var(--border);border-radius:4px;
+  flex-shrink:0;margin-top:2px;
+}
+.check-item span { font-size:13.5px;line-height:1.65;color:var(--ink-light); }
+
+/* FOOTER */
+.footer {
+  margin-top:64px;padding:32px 24px;text-align:center;
+  border-top:1px solid var(--border);font-size:12px;color:var(--ink-muted);line-height:1.8;
+}
+
+@media (max-width:640px) {
+  .hero { padding:48px 20px 40px; }
+  .hero h1 { font-size:24px; }
+  .overview-box { padding:24px 20px;margin:32px 16px; }
+  .measures-grid { grid-template-columns:1fr; }
+  .section { margin:40px auto; }
+  .card-body { padding:18px; }
+  .dark-box { padding:28px 20px;margin:40px 16px; }
+  .dark-grid { grid-template-columns:1fr; }
+  .checklist { grid-template-columns:1fr; }
+  .flow-step { flex-direction:column;gap:12px; }
+  .flow-step:not(:last-child)::before { display:none; }
+  .compare-table { font-size:12px; }
+  .compare-table th,.compare-table td { padding:10px 12px; }
+}
+@media print {
+  .hero { background:#333!important;-webkit-print-color-adjust:exact;print-color-adjust:exact; }
+  .card { break-inside:avoid; }
+  body { font-size:12px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">令和8年10月1日 施行</div>
+    <h1>カスハラ対策<br><em>事前の体制構築とトラブル発生時の対応</em></h1>
+    <p class="hero-sub">改正労働施策総合推進法・カスハラ指針に基づく、雇用管理上の措置義務と実務対応をまとめた社労士向け資料</p>
+    <div class="hero-meta">
+      <span>📋 出典：ビジネスガイド 2026年5月号 No.969</span>
+      <span>👤 執筆：木下達彦弁護士（隼あすか法律事務所）</span>
+    </div>
+  </div>
+</header>
+
+<!-- OVERVIEW -->
+<div class="container">
+<div class="overview-box">
+  <h2>カスハラ指針が求める5つの措置</h2>
+  <p style="font-size:14.5px;color:var(--ink-light);margin-bottom:16px;">改正労働施策総合推進法（R7.6.11公布、R8.10.1施行）に基づき、厚労省が令和8年2月26日に「カスハラ指針」を公表。事業主に以下の5項目の雇用管理上の措置を義務付け。</p>
+  <div class="measures-grid">
+    <div class="measure-card">
+      <div class="measure-num">1</div>
+      <h3>方針の明確化・周知啓発</h3>
+      <p>カスハラには毅然と対応し労働者を保護する旨の方針を明確化。カスハラの内容・対処を管理監督者含む労働者に周知</p>
+    </div>
+    <div class="measure-card">
+      <div class="measure-num">2</div>
+      <h3>相談体制の整備</h3>
+      <p>相談窓口をあらかじめ定め周知。窓口担当者が内容・状況に応じ適切に対応できる体制を構築</p>
+    </div>
+    <div class="measure-card">
+      <div class="measure-num">3</div>
+      <h3>事後の迅速・適切な対応</h3>
+      <p>事実関係の迅速・正確な確認。被害者への配慮措置、方針の再周知、再発防止措置</p>
+    </div>
+    <div class="measure-card">
+      <div class="measure-num">4</div>
+      <h3>悪質事案への抑止措置</h3>
+      <p>過度な要求を繰り返す等の特に悪質なものへの対処をあらかじめ定め、体制を整備</p>
+    </div>
+    <div class="measure-card">
+      <div class="measure-num">5</div>
+      <h3>プライバシー保護・不利益取扱禁止</h3>
+      <p>相談者等のプライバシー保護、相談・協力を理由とする不利益取扱いの禁止を定め周知</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- カスハラの特徴 -->
+<div class="dark-box container">
+  <h2>🔑 カスハラ対応の特徴（他のハラスメントとの違い）</h2>
+  <div class="dark-grid">
+    <div class="dark-item">
+      <h3>外部から発生</h3>
+      <p>会社内部ではなく顧客等の外部から発生。業務命令ができず、任意の交渉・法的措置で対応する必要がある</p>
+    </div>
+    <div class="dark-item">
+      <h3>突発的に発生</h3>
+      <p>即時に現場対応が求められ、他のハラスメント以上に緊張度が高い。事前準備（マニュアル・研修）が極めて重要</p>
+    </div>
+    <div class="dark-item">
+      <h3>クレーム対応との重なり</h3>
+      <p>従来のクレーム対応を包含するが、「従業員目線でのハラスメント対応」が改めて求められる。理不尽な謝罪の強要はNG</p>
+    </div>
+  </div>
+</div>
+
+<!-- 事前の体制構築 -->
+<div class="container">
+<div class="section">
+  <div class="section-header">
+    <div class="section-icon" style="background:#e8f0fd;color:var(--navy);">🏗️</div>
+    <div>
+      <h2>事前の体制構築</h2>
+      <div class="section-sub">相談窓口の設置・方針の周知・就業規則の整備</div>
+    </div>
+  </div>
+
+  <div class="card-grid">
+
+    <!-- 相談窓口 -->
+    <div class="card">
+      <div class="card-head"><h3>相談窓口の設置</h3></div>
+      <div class="card-body">
+        <div class="card-sub sub-point">
+          <h4>📌 設置のポイント</h4>
+          <ul>
+            <li><strong>上司（管理監督者）</strong>を窓口の一つとする → 現場での即時対応に有効</li>
+            <li>同時に<strong>ラインとは別の窓口</strong>（人事部等）も設置 → 上司に相談できないケースに対応</li>
+            <li>既存のセクハラ・パワハラ相談窓口と<strong>一体的に設置</strong>が合理的（プライバシー保護・不利益取扱禁止のノウハウあり）</li>
+            <li><strong>外部窓口</strong>（社労士・弁護士等）の設置も有効。ただし内部担当部署との連携体制が必須</li>
+          </ul>
+        </div>
+        <div class="card-sub sub-do">
+          <h4>✅ 実務対応</h4>
+          <ul>
+            <li>相談窓口の担当者を選任し、連絡先・相談時間帯を明示</li>
+            <li>匿名相談を可能にする</li>
+            <li>プライバシー保護（性的指向・ジェンダーアイデンティティ等含む）を明記</li>
+            <li>相談・調査協力による不利益取扱い禁止を明記</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 方針の周知 -->
+    <div class="card">
+      <div class="card-head"><h3>方針の明確化・周知</h3></div>
+      <div class="card-body">
+        <p>社内報・パンフレット・社内HP等で従業員に周知。顧客等にも方針が伝わるよう店舗等への掲示も有効。</p>
+        <div class="card-sub sub-point">
+          <h4>📌 周知すべき内容</h4>
+          <ul>
+            <li>カスハラに対して毅然と対応し、従業員を保護する方針</li>
+            <li>相談窓口の設置場所・連絡先・相談時間帯</li>
+            <li>プライバシー保護・不利益取扱い禁止</li>
+            <li>取引先からのカスハラに対しても、事実確認の協力要請・改善要請を行う方針</li>
+            <li>派遣社員・個人事業主に対するカスハラも同様に対応する方針</li>
+            <li>自社役員・従業員が<strong>加害者にならない</strong>よう周知（他社へのカスハラも懲戒対象）</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 就業規則 -->
+    <div class="card">
+      <div class="card-head"><h3>就業規則の改定</h3></div>
+      <div class="card-body">
+        <div class="card-sub sub-do">
+          <h4>✅ 規定すべき事項</h4>
+          <ul>
+            <li><strong>カスハラの定義</strong>：職場において行われる顧客等の言動であって、業務の性質その他の事情に照らし社会通念上許容される範囲を超え、従業員の就業環境が害されるもの</li>
+            <li><strong>報告・相談のルート</strong>：直属上司への相談 ＋ ハラスメント相談窓口への通報・相談</li>
+            <li><strong>加害者側の禁止規定</strong>：職場内又は他社の職場において、他社従業員・派遣社員・個人事業主等へのハラスメント禁止</li>
+            <li><strong>調査協力に対する不利益取扱い禁止</strong></li>
+            <li><strong>懲戒事由への追加</strong>：他社へのハラスメント行為 → けん責・減給・出勤停止・降格、繰返し又は悪質な場合 → 懲戒解雇</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<!-- 対応フロー -->
+<div class="container">
+<div class="flow-section">
+  <h2>📊 カスハラ発生時の対応フロー</h2>
+
+  <div class="flow-steps">
+    <div class="flow-step">
+      <div class="flow-num" style="background:var(--navy);">1</div>
+      <div class="flow-content">
+        <h3>現場での初動対応（従業員）</h3>
+        <p>管理監督者等に直ちに報告し、対応方針の指示を仰ぐ。可能な限り一人で対応させない。顧客とのやり取りを録音・録画（個人情報保護法を遵守）。繰り返しの要求には一定時間で退店要求・電話切断。暴行・脅迫は警察へ通報。</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num" style="background:var(--accent);">2</div>
+      <div class="flow-content">
+        <h3>管理監督者による対応</h3>
+        <p>顧客・従業員双方からヒアリング。正当なクレームか不当な要求かを判断。必要に応じて被害従業員をその場から退去させ、管理監督者が交代対応。現場対応困難な場合は本社・法務部門へ連携。</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num" style="background:var(--teal);">3</div>
+      <div class="flow-content">
+        <h3>相談窓口での対応</h3>
+        <p>プライバシー保護・不利益取扱い禁止を告知。チェックシートに基づきヒアリング（当事者情報・カスハラ類型・具体的事実関係・心身の状況・相談者の希望）。関係部署（人事部・法務部門・弁護士・警察等）と連携。</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num" style="background:var(--red);">4</div>
+      <div class="flow-content">
+        <h3>事実確認・配慮措置</h3>
+        <p>録音・録画等の客観証拠を確認。周囲の労働者からも聴取。カスハラ確認後は、被害者と加害者の切離し・配置転換・担当者変更・複数人対応。産業医等によるメンタルヘルス相談。法的措置が必要な場合は弁護士へ。</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num" style="background:var(--navy);">5</div>
+      <div class="flow-content">
+        <h3>悪質事案へのエスカレーション</h3>
+        <p>警告文の発出 → 店舗・施設への出入り禁止 → 商品販売・サービス提供の拒否 → 警察への通報（暴行・脅迫・不退去等） → 接近禁止の仮処分申立。段階を踏んでエスカレートを防止。</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num" style="background:var(--teal);">6</div>
+      <div class="flow-content">
+        <h3>被害者ケア・再発防止</h3>
+        <p>休職・産業医受診の勧奨。方針の再周知・啓発。クレーム原因の解消（商品・サービスの理解向上研修、顧客対応力の向上）。</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- カスハラの類型 -->
+<div class="container">
+<div class="section">
+  <div class="section-header">
+    <div class="section-icon" style="background:#fdf2f2;color:var(--red);">🚨</div>
+    <div>
+      <h2>カスハラの類型と対応</h2>
+      <div class="section-sub">厚労省「カスタマーハラスメント対策企業マニュアル」に準拠</div>
+    </div>
+  </div>
+
+  <table class="compare-table">
+    <thead>
+      <tr><th style="width:28%;">類型</th><th>具体例</th><th style="width:28%;">対応のポイント</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>時間拘束型</strong></td>
+        <td>長時間の拘束、居座り、長時間の電話</td>
+        <td>一定時間で退店要求・電話切断</td>
+      </tr>
+      <tr>
+        <td><strong>リピート型</strong></td>
+        <td>繰り返しの電話問合せ・面会要求</td>
+        <td>警告文発送、出入り禁止</td>
+      </tr>
+      <tr>
+        <td><strong>暴言型</strong></td>
+        <td>大声でどなり声、侮辱的発言、人格否定、名誉棄損</td>
+        <td>録音・録画、管理監督者へ引継ぎ</td>
+      </tr>
+      <tr>
+        <td><strong>暴力型</strong></td>
+        <td>殴る、蹴る、物を投げる、わざとぶつかる</td>
+        <td>直ちに警察へ通報</td>
+      </tr>
+      <tr>
+        <td><strong>威嚇・脅迫型</strong></td>
+        <td>脅迫的発言、反社とのつながり示唆</td>
+        <td>警察への通報、弁護士対応</td>
+      </tr>
+      <tr>
+        <td><strong>権威型</strong></td>
+        <td>権威を振りかざす要求、土下座強要</td>
+        <td>不当要求は明確に拒否、管理監督者交代</td>
+      </tr>
+      <tr>
+        <td><strong>店舗外拘束型</strong></td>
+        <td>店舗外へ呼びつける</td>
+        <td>応じない、複数名で対応</td>
+      </tr>
+      <tr>
+        <td><strong>SNS・ネット誹謗中傷</strong></td>
+        <td>インターネット上での誹謗中傷</td>
+        <td>法務部門・弁護士と連携、削除請求</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+<!-- 被害者側・加害者側 -->
+<div class="container">
+<div class="section">
+  <div class="section-header">
+    <div class="section-icon" style="background:#fff8f0;color:var(--accent);">🔄</div>
+    <div>
+      <h2>被害者側と加害者側の対応</h2>
+      <div class="section-sub">自社が被害者になる場合・加害者になる場合の両面で対応が必要</div>
+    </div>
+  </div>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-head"><h3>自社従業員が被害者の場合</h3></div>
+      <div class="card-body">
+        <div class="card-sub sub-do">
+          <h4>✅ 事業主の義務</h4>
+          <ul>
+            <li>相談対応などの<strong>雇用管理上の措置</strong>（義務）</li>
+            <li>相談等を理由とする<strong>不利益取扱いの禁止</strong>（義務）</li>
+            <li>加害者が他社の役員・従業員の場合 → 他社に事実確認の協力要請・改善要請</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><h3>自社従業員が加害者の場合</h3></div>
+      <div class="card-body">
+        <div class="card-sub sub-danger">
+          <h4>⚠️ 事業主の努力義務</h4>
+          <ul>
+            <li>他社からの協力要請に<strong>応じる努力義務</strong></li>
+            <li>協力要請を理由とする取引先との<strong>契約解除等は望ましくない</strong>（カスハラ指針で明記 → 報復措置は無効の反論リスク）</li>
+            <li>調査に協力した労働者への<strong>不利益取扱い禁止</strong>を定め周知</li>
+            <li>カスハラが確認された場合 → <strong>懲戒処分</strong>等を実施、取引先との関係正常化</li>
+            <li>他社へのカスハラを行わないよう<strong>研修実施</strong>その他の配慮、役員自身も注意を払う</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><h3>派遣社員・個人事業主への対応</h3></div>
+      <div class="card-body">
+        <p>カスハラ指針「7」にて、自社労働者ではない派遣社員や個人事業主に対しても同様の方針を併せて示すことが望ましいとされている。</p>
+        <div class="card-sub sub-warn">
+          <h4>💡 留意点</h4>
+          <ul>
+            <li>外部の顧客等からは職場内の法的地位の違いはわからない → 同じ職場の仲間として同じ対応が望ましい</li>
+            <li>派遣社員・個人事業主へのカスハラを放置すると、自社従業員を守る意思への疑義が生じるリスク</li>
+            <li>相談窓口の利用を派遣社員・個人事業主にも周知</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- 原因解消 -->
+<div class="container">
+<div class="section">
+  <div class="section-header">
+    <div class="section-icon" style="background:#e8f5e9;color:#2e7d32;">🛡️</div>
+    <div>
+      <h2>カスハラ防止のための取組み</h2>
+      <div class="section-sub">原因解消・正当なクレームとの区別・障害者対応</div>
+    </div>
+  </div>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-head"><h3>原因解消の取組み</h3></div>
+      <div class="card-body">
+        <div class="card-sub sub-do">
+          <h4>✅ カスハラ指針が求める取組み</h4>
+          <ul>
+            <li>自社の商品・サービスの深い理解を前提とした<strong>顧客対応力向上研修</strong></li>
+            <li>顧客等の理解を深めるために必要な取組み</li>
+            <li>社会通念上許容される範囲の<strong>正当な申入れはカスハラに該当しない</strong> → 正当な申入れを踏まえて真摯に業務を遂行する意識を持つことも重要</li>
+          </ul>
+        </div>
+        <div class="card-sub sub-warn">
+          <h4>💡 障害者対応の留意点</h4>
+          <ul>
+            <li>障害を理由とする差別の解消の推進に関する法律に基づく<strong>合理的配慮の提供義務</strong>に留意</li>
+            <li>障害特性に応じた対応が必要な場合がある → 主務大臣の指針・内閣府HP掲載の事例等を参考</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- チェックリスト -->
+<div class="container">
+<div class="checklist-section">
+  <h2>📋 令和8年10月施行までの対応チェックリスト</h2>
+  <div class="checklist">
+    <div class="check-item">
+      <div class="check-box"></div>
+      <span>カスハラに毅然と対応し<strong>従業員を保護する方針</strong>を策定したか</span>
+    </div>
+    <div class="check-item">
+      <div class="check-box"></div>
+      <span><strong>相談窓口</strong>を設置し、担当者・連絡先・相談時間帯を明示したか</span>
+    </div>
+    <div class="check-item">
+      <div class="check-box"></div>
+      <span>既存のハラスメント相談窓口との<strong>一体運用</strong>を検討したか</span>
+    </div>
+    <div class="check-item">
+      <div class="check-box"></div>
+      <span><strong>就業規則</strong>にカスハラの定義・相談ルート・加害者側禁止規定・懲戒事由を追加したか</span>
+    </div>
+    <div class="check-item">
+      <div class="check-box"></div>
+      <span>カスハラ方針を<strong>社内（従業員向け）・社外（顧客向け）</strong>に周知したか</span>
+    </div>
+    <div class="check-item">
+      <div class="check-box"></div>
+      <span><strong>対応マニュアル</strong>（店舗用・相談窓口用）を作成したか</span>
+    </div>
+    <div class="check-item">
+      <div class="check-box"></div>
+      <span><strong>相談チェックシート</strong>を作成し、窓口担当者に配付したか</span>
+    </div>
+    <div class="check-item">
+      <div class="check-box"></div>
+      <span>管理監督者向けの<strong>現場対応研修</strong>を実施したか</span>
+    </div>
+    <div class="check-item">
+      <div class="check-box"></div>
+      <span>悪質事案への<strong>エスカレーション手順</strong>（警告文→出入り禁止→警察通報→法的措置）を整備したか</span>
+    </div>
+    <div class="check-item">
+      <div class="check-box"></div>
+      <span>自社従業員が<strong>加害者側にならない</strong>ための研修・周知を行ったか</span>
+    </div>
+    <div class="check-item">
+      <div class="check-box"></div>
+      <span><strong>派遣社員・個人事業主</strong>へもカスハラ方針・相談窓口を周知したか</span>
+    </div>
+    <div class="check-item">
+      <div class="check-box"></div>
+      <span><strong>録音・録画</strong>の運用ルール（個人情報保護法遵守）を定めたか</span>
+    </div>
+    <div class="check-item">
+      <div class="check-box"></div>
+      <span>弁護士・警察との<strong>連携体制</strong>を確認したか</span>
+    </div>
+    <div class="check-item">
+      <div class="check-box"></div>
+      <span>産業医等による<strong>被害者のメンタルヘルス相談体制</strong>を整備したか</span>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>本資料は『ビジネスガイド』2026年5月号（No.969）掲載の木下達彦弁護士「指針を踏まえたカスハラ対策」に基づき作成しています。</p>
+  <p>個別の対応は各社の事業形態・業種に応じた検討が必要です。具体的な法的措置は弁護士にご相談ください。</p>
+</footer>
+
+</body>
+</html>

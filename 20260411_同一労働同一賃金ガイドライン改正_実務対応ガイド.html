@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>同一労働同一賃金ガイドライン改正 実務対応ガイド｜令和8年10月施行</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #1a1a2e;
+  --ink-light: #3a3a5e;
+  --ink-muted: #6b6b8d;
+  --bg: #faf9f7;
+  --bg-warm: #f5f0e8;
+  --bg-card: #ffffff;
+  --accent: #c0392b;
+  --accent-dark: #96281b;
+  --accent-light: #e74c3c;
+  --blue: #2c3e7a;
+  --blue-light: #3b5998;
+  --teal: #1a7a6d;
+  --teal-light: #20a08a;
+  --gold: #b8860b;
+  --gold-light: #d4a017;
+  --border: #e0dcd4;
+  --shadow: rgba(26, 26, 46, 0.08);
+  --radius: 6px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.85;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== HERO ===== */
+.hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2c3e7a 50%, #1a7a6d 100%);
+  color: #fff;
+  padding: 80px 40px 60px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--gold), var(--teal-light));
+}
+.hero-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.hero-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 6px 18px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  margin-bottom: 24px;
+  backdrop-filter: blur(4px);
+}
+.hero h1 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+.hero h1 em {
+  font-style: normal;
+  color: #ffd700;
+}
+.hero-sub {
+  font-size: 16px;
+  opacity: 0.85;
+  font-weight: 300;
+  max-width: 640px;
+}
+.hero-meta {
+  margin-top: 32px;
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  opacity: 0.7;
+}
+.hero-meta span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ===== LAYOUT ===== */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ===== EXECUTIVE SUMMARY ===== */
+.exec-summary {
+  background: var(--bg-warm);
+  border-left: 4px solid var(--accent);
+  padding: 32px 36px;
+  margin: 48px auto;
+  max-width: 960px;
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+.exec-summary h2 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 20px;
+  color: var(--accent);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.exec-summary h2::before {
+  content: '⚡';
+  font-size: 22px;
+}
+.key-points {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+.key-point {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  position: relative;
+}
+.key-point-num {
+  position: absolute;
+  top: -10px;
+  left: 16px;
+  background: var(--blue);
+  color: #fff;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+}
+.key-point h3 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  margin-top: 6px;
+  color: var(--blue);
+}
+.key-point p {
+  font-size: 13px;
+  color: var(--ink-muted);
+  line-height: 1.7;
+}
+
+/* ===== SECTION ===== */
+.section {
+  margin: 56px auto;
+  max-width: 960px;
+}
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 28px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--ink);
+}
+.section-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+.section-header h2 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+.section-header .section-sub {
+  font-size: 13px;
+  color: var(--ink-muted);
+  font-weight: 400;
+}
+
+/* ===== TREATMENT CARDS ===== */
+.treatment-grid {
+  display: grid;
+  gap: 24px;
+}
+.treatment-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 2px 12px var(--shadow);
+  transition: box-shadow 0.2s;
+}
+.treatment-card:hover {
+  box-shadow: 0 4px 24px rgba(26, 26, 46, 0.12);
+}
+.card-header {
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-bottom: 1px solid var(--border);
+}
+.card-tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.tag-new { background: #fde8e8; color: var(--accent); }
+.tag-revised { background: #e8f0fd; color: var(--blue); }
+.tag-existing { background: #e8f5e9; color: #2e7d32; }
+
+.card-header h3 {
+  font-size: 17px;
+  font-weight: 700;
+  flex: 1;
+}
+.card-body {
+  padding: 24px;
+}
+.card-body p {
+  margin-bottom: 14px;
+  font-size: 14.5px;
+  color: var(--ink-light);
+}
+
+/* Subsections in card */
+.card-subsection {
+  margin-top: 20px;
+  padding: 18px 20px;
+  border-radius: var(--radius);
+  border: 1px solid;
+}
+.sub-principle {
+  background: #f8f6ff;
+  border-color: #d8d0f0;
+}
+.sub-action {
+  background: #f0f8f0;
+  border-color: #c8e0c8;
+}
+.sub-caution {
+  background: #fff8f0;
+  border-color: #f0d8b0;
+}
+.sub-risk {
+  background: #fdf2f2;
+  border-color: #f0c8c8;
+}
+
+.card-subsection h4 {
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.sub-principle h4 { color: #5b3fa0; }
+.sub-action h4 { color: #2e7d32; }
+.sub-caution h4 { color: #b8860b; }
+.sub-risk h4 { color: var(--accent); }
+
+.card-subsection ul {
+  list-style: none;
+  padding: 0;
+}
+.card-subsection li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 13.5px;
+  line-height: 1.75;
+  color: var(--ink-light);
+}
+.card-subsection li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--ink-muted);
+  font-size: 11px;
+  top: 2px;
+}
+
+/* ===== TIMELINE ===== */
+.timeline {
+  margin: 56px auto;
+  max-width: 960px;
+}
+.timeline-bar {
+  display: flex;
+  align-items: stretch;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+}
+.tl-item {
+  flex: 1;
+  padding: 20px 16px;
+  text-align: center;
+  border-right: 1px solid var(--border);
+  position: relative;
+}
+.tl-item:last-child { border-right: none; }
+.tl-item.active {
+  background: var(--accent);
+  color: #fff;
+}
+.tl-item.active .tl-label { color: rgba(255,255,255,0.8); }
+.tl-date {
+  font-size: 18px;
+  font-weight: 700;
+  font-family: 'Noto Serif JP', serif;
+}
+.tl-label {
+  font-size: 12px;
+  color: var(--ink-muted);
+  margin-top: 4px;
+  line-height: 1.5;
+}
+
+/* ===== PRINCIPLE BOX ===== */
+.principle-box {
+  background: linear-gradient(135deg, #1a1a2e, #2c3e7a);
+  color: #fff;
+  padding: 40px;
+  border-radius: var(--radius);
+  margin: 56px auto;
+  max-width: 960px;
+  position: relative;
+  overflow: hidden;
+}
+.principle-box::before {
+  content: '"';
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  font-size: 120px;
+  font-family: 'Noto Serif JP', serif;
+  opacity: 0.08;
+  line-height: 1;
+}
+.principle-box h2 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #ffd700;
+}
+.principle-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+.principle-item {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+.principle-item h3 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #ffd700;
+}
+.principle-item p {
+  font-size: 13px;
+  opacity: 0.85;
+  line-height: 1.75;
+}
+
+/* ===== CHECKLIST ===== */
+.checklist-section {
+  margin: 56px auto;
+  max-width: 960px;
+}
+.checklist-section h2 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 22px;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--ink);
+}
+.checklist {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+.check-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+.check-box {
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--border);
+  border-radius: 4px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.check-item span {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--ink-light);
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  margin-top: 64px;
+  padding: 32px 24px;
+  text-align: center;
+  border-top: 1px solid var(--border);
+  font-size: 12px;
+  color: var(--ink-muted);
+  line-height: 1.8;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 640px) {
+  .hero { padding: 48px 20px 40px; }
+  .hero h1 { font-size: 24px; }
+  .exec-summary { padding: 24px 20px; margin: 32px 16px; }
+  .key-points { grid-template-columns: 1fr; }
+  .section { margin: 40px auto; }
+  .card-body { padding: 18px; }
+  .timeline-bar { flex-direction: column; }
+  .tl-item { border-right: none; border-bottom: 1px solid var(--border); }
+  .principle-box { padding: 28px 20px; margin: 40px 16px; }
+  .principle-grid { grid-template-columns: 1fr; }
+  .checklist { grid-template-columns: 1fr; }
+  .container { padding: 0 16px; }
+}
+
+@media print {
+  .hero { background: #333 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .treatment-card { break-inside: avoid; }
+  body { font-size: 12px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">令和8年10月1日 施行</div>
+    <h1>同一労働同一賃金ガイドライン改正<br><em>実務対応ガイド</em></h1>
+    <p class="hero-sub">水町勇一郎教授セミナー講演録に基づく、改正ガイドラインの要点と各待遇ごとの実務対応をまとめた社労士向け資料</p>
+    <div class="hero-meta">
+      <span>📋 出典：ビジネスガイド 2026年5月号 No.969</span>
+      <span>👤 講師：水町勇一郎（早稲田大学法学学術院教授）</span>
+    </div>
+  </div>
+</header>
+
+<!-- ===== TIMELINE ===== -->
+<div class="container">
+<div class="timeline" style="margin-top:40px;">
+  <h2 style="font-family:'Noto Serif JP',serif;font-size:18px;margin-bottom:16px;">スケジュール</h2>
+  <div class="timeline-bar">
+    <div class="tl-item">
+      <div class="tl-date">2025.12</div>
+      <div class="tl-label">審議会で<br>改革方向性まとまる</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date">2026.4</div>
+      <div class="tl-label">指針・施行規則<br>改正公布</div>
+    </div>
+    <div class="tl-item active">
+      <div class="tl-date">2026.10</div>
+      <div class="tl-label">改正ガイドライン<br><strong>施行</strong></div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date">2027〜</div>
+      <div class="tl-label">労基法改正<br>（別途検討）</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ===== EXECUTIVE SUMMARY ===== -->
+<div class="container">
+<div class="exec-summary">
+  <h2>今回の改正の核心</h2>
+  <p style="font-size:14.5px;color:var(--ink-light);margin-bottom:16px;">今回は<strong>法律改正なし</strong>。施行規則・指針・ガイドラインの改正で対応。退職手当・家族手当・住宅手当が新たにガイドラインに明記された。</p>
+  <div class="key-points">
+    <div class="key-point">
+      <div class="key-point-num">1</div>
+      <h3>ガイドラインの明確化</h3>
+      <p>退職手当・家族手当・住宅手当等を追記。判例を踏まえた具体的指針を充実</p>
+    </div>
+    <div class="key-point">
+      <div class="key-point-num">2</div>
+      <h3>説明義務の強化</h3>
+      <p>雇入れ時の労働条件明示事項にパート有期法14条2項の説明請求権を追加（過料付き）</p>
+    </div>
+    <div class="key-point">
+      <div class="key-point-num">3</div>
+      <h3>客観的・具体的実態</h3>
+      <p>不合理性判断は「主観的・抽象的」ではなく「客観的・具体的実態」に基づくことを明記</p>
+    </div>
+    <div class="key-point">
+      <div class="key-point-num">4</div>
+      <h3>正社員人材確保論の制限</h3>
+      <p>「正社員確保目的」のみでは待遇差を正当化できないことを明確化</p>
+    </div>
+    <div class="key-point">
+      <div class="key-point-num">5</div>
+      <h3>行政の履行確保強化</h3>
+      <p>労基署と均等室の連携による臨検・指導の強化。指導勧告が増加傾向</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ===== 判断の基本原則 ===== -->
+<div class="principle-box container">
+  <h2>🔑 不合理性判断の3原則（改正で明確化）</h2>
+  <div class="principle-grid">
+    <div class="principle-item">
+      <h3>① 個別待遇ごとの判断</h3>
+      <p>基本給・賞与・手当など「それぞれについて」個別に不合理性を判断する（パート有期法8条の構造）</p>
+    </div>
+    <div class="principle-item">
+      <h3>② 性質・目的に照らした判断</h3>
+      <p>当該待遇の性質及び目的に照らして「適切と認められる事情」を考慮して判断する</p>
+    </div>
+    <div class="principle-item">
+      <h3>③ 客観的・具体的実態</h3>
+      <p>「将来の役割期待が異なる」等の主観的・抽象的説明では不十分。客観的・具体的な実態に基づく必要がある</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 各待遇の実務対応 ===== -->
+<div class="container">
+<div class="section">
+  <div class="section-header">
+    <div class="section-icon" style="background:#e8f0fd;color:var(--blue);">💰</div>
+    <div>
+      <h2>各待遇ごとの実務対応</h2>
+      <div class="section-sub">ガイドライン改正の項目別ポイントと対応方法</div>
+    </div>
+  </div>
+
+  <div class="treatment-grid">
+
+    <!-- 基本給 -->
+    <div class="treatment-card">
+      <div class="card-header">
+        <span class="card-tag tag-existing">従前維持</span>
+        <h3>基本給</h3>
+      </div>
+      <div class="card-body">
+        <p>基本給の性格（①能力・経験＝職能給、②業績・成果＝成果給、③勤続年数＝勤続給）に応じて、それぞれ不合理な相違がないか判断する。改正前から具体的記載があり、今回は変更なし。</p>
+        <div class="card-subsection sub-action">
+          <h4>✅ 実務対応</h4>
+          <ul>
+            <li>自社の基本給がどの性格（職能・成果・勤続）かを明確にする</li>
+            <li>短時間・有期雇用労働者にも同じ性格に応じた基本給を支給しているか点検</li>
+            <li>制度が異なる場合（正社員＝職能給、パート＝職務給）でも、「将来の役割期待が違うから」という主観的説明はNG → 客観的・具体的な実態で説明できるようにする</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 賞与 -->
+    <div class="treatment-card">
+      <div class="card-header">
+        <span class="card-tag tag-revised">注書き追加</span>
+        <h3>賞与</h3>
+      </div>
+      <div class="card-body">
+        <p>従前の「企業業績への貢献に応じた支給」に加え、賞与の多様な性質・目的（賃金後払い、功労報償、生活費補助、勤労奨励）が明記された。長澤運輸事件最高裁判決を踏まえた追記。</p>
+        <div class="card-subsection sub-principle">
+          <h4>📌 判断のポイント</h4>
+          <ul>
+            <li><strong>賃金後払い的性格</strong> → 同時期に勤務していれば短時間・有期にも及ぶ</li>
+            <li><strong>功労報償的性格</strong> → 貢献度の差に応じた割合で支給</li>
+            <li><strong>勤労奨励的性格</strong> → 更新が見込まれる者には及ぶ可能性</li>
+            <li>均衡のとれた賞与を支給せず、かつ見合い分の基本給上乗せ等もない場合 → <strong>不合理と認められる可能性あり</strong></li>
+          </ul>
+        </div>
+        <div class="card-subsection sub-action">
+          <h4>✅ 実務対応</h4>
+          <ul>
+            <li>自社の賞与の性質・目的を就業規則等で明確化する</li>
+            <li>短時間・有期に賞与を支給していない場合、性質・目的ごとに不支給の合理性を検証</li>
+            <li>支給する場合は、職務内容等の差に応じた均衡のとれた金額設計を行う</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 退職手当 -->
+    <div class="treatment-card">
+      <div class="card-header">
+        <span class="card-tag tag-new">新規追加</span>
+        <h3>退職手当</h3>
+      </div>
+      <div class="card-body">
+        <p>現行ガイドラインには記載がなかった退職手当が新たに追加。メトロコマース事件最高裁判決を踏まえ、賃金後払い・功労報償等の性質・目的に照らして均衡のとれた退職手当を支給すべきとされた。</p>
+        <div class="card-subsection sub-risk">
+          <h4>⚠️ リスクポイント</h4>
+          <ul>
+            <li>退職手当を一切支給せず、見合い分の基本給上乗せ等もない場合 → 不合理と認められる可能性</li>
+            <li>「正社員人材確保目的」のみでは不支給を正当化できない</li>
+          </ul>
+        </div>
+        <div class="card-subsection sub-action">
+          <h4>✅ 実務対応</h4>
+          <ul>
+            <li>短時間・有期にも退職手当制度を検討（正社員と同じ計算式の適用、又は縮小版）</li>
+            <li>退職手当に代えて基本給への上乗せ（例：5%加算）で対応する方法も可</li>
+            <li>企業型DC・iDeCoの拠出支援という形での対応も選択肢</li>
+            <li>正社員の退職金が「勤続4年以上」なら、短時間・有期も同条件で設計しイコールフィッティング</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 無事故手当 -->
+    <div class="treatment-card">
+      <div class="card-header">
+        <span class="card-tag tag-new">新規追加</span>
+        <h3>無事故手当</h3>
+      </div>
+      <div class="card-body">
+        <p>ハマキョウレックス事件最高裁判決を踏まえて追記。安全運転・事故防止の必要性は職務の内容が同一であれば正社員と変わらないため、同一の無事故手当を支給しなければならない。</p>
+        <div class="card-subsection sub-action">
+          <h4>✅ 実務対応（タクシー・運輸業界で特に重要）</h4>
+          <ul>
+            <li>ドライバー職の短時間・有期に無事故手当を支給していない場合は即時是正</li>
+            <li>業務内容が同一であれば、同一額の支給が必要</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 家族手当 -->
+    <div class="treatment-card">
+      <div class="card-header">
+        <span class="card-tag tag-new">新規追加</span>
+        <h3>家族手当</h3>
+      </div>
+      <div class="card-body">
+        <p>日本郵便（大阪）事件最高裁判決を踏まえて追記。長期勤続者の生活保障・継続雇用確保の目的は、相応に継続的な勤務が見込まれる有期雇用労働者にも及ぶ。</p>
+        <div class="card-subsection sub-principle">
+          <h4>📌 「相応に継続的な勤務」の目安</h4>
+          <ul>
+            <li>判決の周辺状況から<strong>概ね5年程度</strong>の勤続が目安</li>
+            <li>無期転換した者、又は5年超で反復更新している者は該当する可能性大</li>
+          </ul>
+        </div>
+        <div class="card-subsection sub-action">
+          <h4>✅ 実務対応</h4>
+          <ul>
+            <li>契約更新を繰り返し、相応に継続勤務が見込まれる有期雇用者 → 正社員と同一の家族手当を支給</li>
+            <li>継続勤務が見込まれない短期契約者 → 不支給でも問題なし</li>
+            <li>配偶者手当は女性の就業調整の要因 → 働き方に中立的な制度への見直しが望ましい（注書き追記）</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 住宅手当 -->
+    <div class="treatment-card">
+      <div class="card-header">
+        <span class="card-tag tag-new">新規追加</span>
+        <h3>住宅手当</h3>
+      </div>
+      <div class="card-body">
+        <p>ハマキョウレックス事件等を踏まえて追記。転居を伴う配置転換の有無に応じて支給される住宅手当について整理。</p>
+        <div class="card-subsection sub-principle">
+          <h4>📌 判断の分岐</h4>
+          <ul>
+            <li><strong>転勤あり正社員のみ支給の場合</strong>：転勤のない短時間・有期への不支給は不合理とは言えない（ハマキョウレックス判決）</li>
+            <li><strong>転勤のない正社員にも支給している場合</strong>：転勤のない有期雇用者への不支給は<strong>不合理</strong>（井関松山、日本郵便等の高裁判決で確定）</li>
+          </ul>
+        </div>
+        <div class="card-subsection sub-action">
+          <h4>✅ 実務対応</h4>
+          <ul>
+            <li>地域限定正社員等の転勤なし正社員に住宅手当を支給している場合 → 有期雇用者にも同様に支給</li>
+            <li>転勤の有無に応じた支給設計であれば、有期への不支給は許容される余地あり</li>
+            <li>注書き：転勤有無にかかわらず支給する住宅手当も、パート有期法8条の適用対象であることに留意</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 福利厚生施設 -->
+    <div class="treatment-card">
+      <div class="card-header">
+        <span class="card-tag tag-revised">拡充</span>
+        <h3>福利厚生施設</h3>
+      </div>
+      <div class="card-body">
+        <p>従前の「給食施設・休憩室・更衣室の利用」に加え、利用料金・割引率等の利用条件についても不合理な相違を設けてはならないことが明確化された。</p>
+        <div class="card-subsection sub-action">
+          <h4>✅ 実務対応</h4>
+          <ul>
+            <li>施設の利用自体だけでなく、割引率・利用料金等の条件差も点検</li>
+            <li>スポーツジム補助・保養施設の利用料金等で正社員のみ優遇していないか確認</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 病気休職 -->
+    <div class="treatment-card">
+      <div class="card-header">
+        <span class="card-tag tag-revised">追記</span>
+        <h3>病気休職（有給保障）</h3>
+      </div>
+      <div class="card-body">
+        <p>日本郵便（東京）事件最高裁判決を踏まえ追記。正社員に病気休職中の給与保障を行っている場合、相応に継続勤務が見込まれる短時間・有期にも同一の有給保障が必要。</p>
+        <div class="card-subsection sub-action">
+          <h4>✅ 実務対応</h4>
+          <ul>
+            <li>正社員の病気休職が有給の場合 → 継続勤務が見込まれる有期にも同一の有給保障</li>
+            <li>短期契約で継続勤務が見込まれない場合 → 無給扱いも許容</li>
+            <li>「相応に継続的な勤務」の基準は家族手当と同様（概ね5年目安）</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 夏季冬季休暇 -->
+    <div class="treatment-card">
+      <div class="card-header">
+        <span class="card-tag tag-new">新規追加</span>
+        <h3>夏季冬季休暇</h3>
+      </div>
+      <div class="card-body">
+        <p>日本郵便（佐賀）事件最高裁判決を踏まえ追記。心身のリフレッシュという目的は短時間・有期にも同様に及ぶため、同一の夏季冬季休暇を有給で付与しなければならない。</p>
+        <div class="card-subsection sub-caution">
+          <h4>💡 注意点</h4>
+          <ul>
+            <li>繁忙期限定の短期契約者は除外の余地あり（問題となる例参照）</li>
+            <li>通年勤務の有期雇用者には原則として付与が必要</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 褒賞 -->
+    <div class="treatment-card">
+      <div class="card-header">
+        <span class="card-tag tag-new">新規追加</span>
+        <h3>褒賞（勤続褒賞）</h3>
+      </div>
+      <div class="card-body">
+        <p>メトロコマース事件高裁判決を踏まえ追記。10年褒賞・20年褒賞等、一定期間勤続した労働者に付与するものは、同一の期間勤続した短時間・有期にも同一の褒賞を付与しなければならない。</p>
+      </div>
+    </div>
+
+  </div><!-- /treatment-grid -->
+</div><!-- /section -->
+</div>
+
+<!-- ===== 定年後再雇用・正社員人材確保論 ===== -->
+<div class="container">
+<div class="section">
+  <div class="section-header">
+    <div class="section-icon" style="background:#fff8f0;color:var(--gold);">⚖️</div>
+    <div>
+      <h2>総論的留意事項</h2>
+      <div class="section-sub">定年後再雇用・正社員人材確保論・就業規則の不利益変更</div>
+    </div>
+  </div>
+
+  <div class="treatment-grid">
+
+    <!-- 定年後再雇用 -->
+    <div class="treatment-card">
+      <div class="card-header">
+        <span class="card-tag tag-revised">明確化</span>
+        <h3>定年後再雇用</h3>
+      </div>
+      <div class="card-body">
+        <p>長澤運輸事件最高裁判決を踏まえつつ、誤解を防ぐ追記がなされた。定年後再雇用であることは「その他の事情」として考慮されうるが、それだけで待遇差が正当化されるわけではない。</p>
+        <div class="card-subsection sub-risk">
+          <h4>⚠️ よくある誤解と正しい理解</h4>
+          <ul>
+            <li>❌「定年後再雇用だから100対60でOK」→ 数字で一律に決めてはダメ</li>
+            <li>✅ 個々の待遇（基本給・賞与・手当）ごとに性質・目的に照らして判断</li>
+            <li>✅ 労使交渉の経緯（結果だけでなくプロセス）も考慮事情</li>
+            <li>参考：名古屋自動車学校事件差戻審（R8.2.26）→ 基本給・賞与で約6割弱を下回る部分を不合理と判示</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 正社員人材確保論 -->
+    <div class="treatment-card">
+      <div class="card-header">
+        <span class="card-tag tag-new">新規追加</span>
+        <h3>正社員人材確保論の制限</h3>
+      </div>
+      <div class="card-body">
+        <p>大阪医科薬科大学事件・メトロコマース事件の最高裁判決で用いられた「正社員人材確保」目的のみでは、待遇差の不合理性を否定できないことが明記された。</p>
+        <div class="card-subsection sub-risk">
+          <h4>⚠️ 実務上の影響</h4>
+          <ul>
+            <li>「正社員を確保・育成するため」という説明だけでは不十分</li>
+            <li>賃金後払い・功労報償等の<strong>客観的な性質・目的</strong>に照らした検証が必要</li>
+            <li>改正前の労契法20条判決の「正社員人材確保論」がひとり歩きしないよう明確化</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 不利益変更 -->
+    <div class="treatment-card">
+      <div class="card-header">
+        <span class="card-tag tag-revised">明確化</span>
+        <h3>就業規則の不利益変更</h3>
+      </div>
+      <div class="card-body">
+        <p>改革の目的は短時間・有期の<strong>待遇改善</strong>であり、正社員の待遇引下げで差を解消する方法は原則として望ましくないことが念押しされた。</p>
+        <div class="card-subsection sub-caution">
+          <h4>💡 やむを得ず引下げる場合の要件</h4>
+          <ul>
+            <li>労働契約法9条：原則として労働者との合意が必要</li>
+            <li>合意なき場合は労契法10条：変更の合理性が必要</li>
+            <li>済生会事件（R5.5.24山口地判）：高度の経営上の必要性＋不利益軽減措置＋労使交渉の経緯 → 合理性肯定</li>
+            <li>ただし「合理的なら下げてよい」と安易に解釈しないこと</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 無期フルタイム -->
+    <div class="treatment-card">
+      <div class="card-header">
+        <span class="card-tag tag-new">新規追加</span>
+        <h3>無期雇用フルタイム労働者（第6）</h3>
+      </div>
+      <div class="card-body">
+        <p>無期転換後のフルタイム労働者はパート有期法の適用対象外だが、転換前の不合理な待遇差が残存しないよう、転換時にあらかじめ点検・解消することが求められる。</p>
+        <div class="card-subsection sub-action">
+          <h4>✅ 実務対応</h4>
+          <ul>
+            <li>無期転換時に正社員との待遇差を点検し、不合理な相違があれば解消してから転換</li>
+            <li>「ただ無期」（待遇は有期のまま無期に転換しただけ）を防止</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<!-- ===== CHECKLIST ===== -->
+<div class="container">
+<div class="checklist-section">
+  <h2>📋 令和8年10月施行までの対応チェックリスト</h2>
+  <div class="checklist">
+    <div class="check-item">
+      <div class="check-box"></div>
+      <span>各待遇（基本給・賞与・退職手当・各種手当）の<strong>性質・目的を明文化</strong>しているか</span>
+    </div>
+    <div class="check-item">
+      <div class="check-box"></div>
+      <span>短時間・有期雇用労働者への<strong>退職手当制度</strong>（又は見合い給付）を検討したか</span>
+    </div>
+    <div class="check-item">
+      <div class="check-box"></div>
+      <span>継続勤務が見込まれる有期雇用者への<strong>家族手当</strong>の支給を検討したか</span>
+    </div>
+    <div class="check-item">
+      <div class="check-box"></div>
+      <span>転勤なし正社員に住宅手当を支給している場合、有期にも支給する制度になっているか</span>
+    </div>
+    <div class="check-item">
+      <div class="check-box"></div>
+      <span>雇入通知書に<strong>パート有期法14条2項の説明請求権</strong>を明示事項として追加したか</span>
+    </div>
+    <div class="check-item">
+      <div class="check-box"></div>
+      <span>待遇差の説明を<strong>「客観的・具体的実態」</strong>に基づいて行える状態か（主観的・抽象的説明の排除）</span>
+    </div>
+    <div class="check-item">
+      <div class="check-box"></div>
+      <span>短時間・有期への<strong>夏季冬季休暇</strong>（有給）を付与する制度になっているか</span>
+    </div>
+    <div class="check-item">
+      <div class="check-box"></div>
+      <span>病気休職の<strong>有給保障</strong>を、継続勤務が見込まれる有期にも適用しているか</span>
+    </div>
+    <div class="check-item">
+      <div class="check-box"></div>
+      <span>定年後再雇用者の待遇を個々の待遇ごとに性質・目的に照らして点検したか</span>
+    </div>
+    <div class="check-item">
+      <div class="check-box"></div>
+      <span>無期転換時の待遇差の点検・解消の仕組みを整備したか</span>
+    </div>
+    <div class="check-item">
+      <div class="check-box"></div>
+      <span>福利厚生施設の<strong>利用料金・割引率</strong>に不合理な差がないか確認したか</span>
+    </div>
+    <div class="check-item">
+      <div class="check-box"></div>
+      <span>労使コミュニケーション（短時間・有期の意向を踏まえた協議）の記録を整備しているか</span>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <p>本資料は『ビジネスガイド』2026年5月号（No.969）掲載の水町勇一郎教授セミナー講演録に基づき作成しています。</p>
+  <p>ガイドラインの正式版は令和8年4月に公布予定。個別の待遇判断は各社の実態に応じた検討が必要です。</p>
+</footer>
+
+</body>
+</html>
