@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <title>【2026年4月開始】自転車「青切符」導入と企業の対応ポイント｜土橋社労士事務所</title>
+  <style>
+    :root {
+      --ink: #1c1c2e;
+      --ink-light: #3b3b5c;
+      --ink-muted: #6e6e8a;
+      --bg: #f9fafb;
+      --bg-warm: #f0f4f8;
+      --bg-card: #ffffff;
+      --accent: #d35400;
+      --navy: #1b2a4a;
+      --teal: #0e6655;
+      --red: #c0392b;
+      --border: #dce1e8;
+      --shadow: rgba(28,28,46,0.07);
+      --radius: 6px;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family:'Noto Sans JP',sans-serif;
+      background:var(--bg);
+      color:var(--ink);
+      line-height:1.85;
+      font-size:15px;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      min-height: 420px;
+      display: flex;
+      align-items: center;
+    }
+    .hero-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(15,24,43,0.88) 0%, rgba(42,60,90,0.80) 55%, rgba(42,60,90,0.50) 100%);
+    }
+    .hero::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 4px;
+      background: linear-gradient(90deg, #aa8e45 0%, #f9f2c8 50%, #aa8e45 100%);
+      z-index: 2;
+    }
+    .hero-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 80px 40px 60px;
+      position: relative;
+      z-index: 1;
+      color: #fff;
+    }
+    .hero-badge {
+      display:inline-block; background:rgba(255,255,255,0.12);
+      border:1px solid rgba(255,255,255,0.3); padding:6px 18px; border-radius:30px;
+      font-size:13px; font-weight:500; letter-spacing:0.08em; margin-bottom:24px;
+      backdrop-filter:blur(4px);
+    }
+    .hero h1 {
+      font-family:'Noto Serif JP',serif; font-size:clamp(24px,3.5vw,38px); font-weight:700; line-height:1.4; margin-bottom:16px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+    }
+    .hero h1 em { font-style:normal; color:#ffd700; }
+    .hero-sub { font-size:15px; opacity:0.9; font-weight:300; max-width:600px; line-height:1.9; text-shadow: 0 1px 4px rgba(0,0,0,0.3); }
+    .hero-office { margin-top:28px; font-size:12px; opacity:0.65; letter-spacing:0.12em; }
+
+    /* LAYOUT */
+    .container { max-width:960px; margin:0 auto; padding:0 24px; }
+
+    /* LEAD */
+    .lead-box {
+      background: var(--bg-card);
+      border-left: 4px solid var(--navy);
+      padding: 28px 32px;
+      margin: 40px auto;
+      max-width: 960px;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      box-shadow: 0 2px 12px var(--shadow);
+    }
+    .lead-box p { font-size:15px; line-height:2; color:var(--ink-light); }
+
+    /* SECTION */
+    .section { margin: 56px auto; max-width: 960px; padding: 0 24px; }
+    .section-header {
+      display:flex; align-items:center; gap:14px; margin-bottom:28px;
+      padding-bottom:16px; border-bottom:2px solid var(--ink);
+    }
+    .section-icon {
+      width:44px; height:44px; border-radius:10px;
+      display:flex; align-items:center; justify-content:center; font-size:22px; flex-shrink:0;
+    }
+    .section-header h2 { font-family:'Noto Serif JP',serif; font-size:22px; font-weight:700; line-height:1.3; }
+    .chapter-label {
+      display:inline-block; background:var(--navy); color:#fff;
+      font-size:11px; font-weight:700; letter-spacing:0.1em; padding:3px 12px;
+      border-radius:2px; margin-bottom:8px;
+    }
+
+    /* CARDS */
+    .card-grid { display:grid; gap:24px; }
+    .card {
+      background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius);
+      overflow:hidden; box-shadow:0 2px 12px var(--shadow);
+    }
+    .card-head {
+      padding:18px 24px; display:flex; align-items:center; gap:12px;
+      border-bottom:1px solid var(--border);
+    }
+    .card-head h3 { font-size:16px; font-weight:700; flex:1; }
+    .card-body { padding:24px; }
+    .card-body p { margin-bottom:14px; font-size:14.5px; color:var(--ink-light); line-height:1.9; }
+    .card-body p:last-child { margin-bottom:0; }
+
+    /* EMBEDDED IMAGE */
+    .doc-img {
+      width: 100%;
+      max-width: 720px;
+      height: auto;
+      display: block;
+      margin: 20px auto;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: 0 2px 12px var(--shadow);
+    }
+    .img-caption {
+      text-align: center;
+      font-size: 12px;
+      color: var(--ink-muted);
+      margin-top: -12px;
+      margin-bottom: 16px;
+    }
+
+    /* SUB BOXES */
+    .card-sub { margin-top:20px; padding:18px 20px; border-radius:var(--radius); border:1px solid; }
+    .sub-point { background:#f0f4ff; border-color:#c8d8f0; }
+    .sub-do    { background:#f0f8f0; border-color:#c8e0c8; }
+    .sub-warn  { background:#fff8f0; border-color:#f0d8b0; }
+    .sub-danger{ background:#fdf2f2; border-color:#f0c8c8; }
+    .card-sub h4 { font-size:13px; font-weight:700; margin-bottom:10px; display:flex; align-items:center; gap:8px; }
+    .sub-point h4 { color:var(--navy); }
+    .sub-do h4    { color:#2e7d32; }
+    .sub-warn h4  { color:#b8860b; }
+    .sub-danger h4{ color:var(--red); }
+    .card-sub ul { list-style:none; padding:0; }
+    .card-sub li {
+      position:relative; padding-left:20px; margin-bottom:8px;
+      font-size:13.5px; line-height:1.75; color:var(--ink-light);
+    }
+    .card-sub li::before { content:'▸'; position:absolute; left:0; color:var(--ink-muted); font-size:11px; top:2px; }
+
+    /* INFO / RISK */
+    .info-highlight {
+      background:#e8f4fd; border:1px solid #b8daff; border-radius:var(--radius);
+      padding:18px 22px; margin-top:18px; display:flex; gap:14px; align-items:flex-start;
+    }
+    .info-highlight p { font-size:13.5px; color:#0c4a7e; line-height:1.85; }
+    .risk-highlight {
+      background:#fdf2f2; border:1px solid #f5c6c6; border-radius:var(--radius);
+      padding:18px 22px; margin-top:18px; display:flex; gap:14px; align-items:flex-start;
+    }
+    .risk-highlight p { font-size:13.5px; color:#6b0a0a; line-height:1.85; }
+
+    /* SOURCE CITE */
+    .source-cite {
+      font-size:12px; color:var(--ink-muted); margin-top:10px;
+      padding-top:8px; border-top:1px dashed var(--border);
+    }
+    .source-cite a { color:var(--navy); text-decoration:underline; }
+
+    /* LINK LIST */
+    .link-list { list-style:none; padding:0; margin-top:16px; }
+    .link-list li { margin-bottom:10px; font-size:13.5px; }
+    .link-list a {
+      color: var(--navy);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      background: #f0f4ff;
+      border: 1px solid #c8d8f0;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+    .link-list a:hover { background:#dce8ff; }
+    .link-list a::before { content:'🔗'; font-size:13px; }
+
+    /* DOWNLOAD BOX */
+    .download-box {
+      background: linear-gradient(135deg, #fff8e1, #fffde7);
+      border: 2px solid #ffd54f;
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .download-icon { font-size: 36px; flex-shrink: 0; }
+    .download-content h4 { font-size: 15px; font-weight: 700; color: #6d4c00; margin-bottom: 6px; }
+    .download-content p { font-size: 13px; color: #8d6e00; line-height: 1.7; }
+    .download-btn {
+      display: inline-block;
+      background: #f9a825;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 10px 22px;
+      border-radius: 4px;
+      text-decoration: none;
+      margin-top: 10px;
+      transition: background 0.2s;
+    }
+    .download-btn:hover { background: #f57f17; }
+
+    /* CHECKLIST */
+    .checklist { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:14px; margin-top:8px; }
+    .check-item {
+      background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius);
+      padding:16px 18px; display:flex; gap:12px; align-items:flex-start;
+    }
+    .check-box { width:20px; height:20px; border:2px solid #1a5276; border-radius:4px; flex-shrink:0; margin-top:2px; }
+    .check-item-text { font-size:13px; color:var(--ink-light); line-height:1.7; }
+    .check-item-text strong { color:var(--navy); display:block; font-size:13.5px; margin-bottom:2px; }
+
+    /* DARK BOX */
+    .dark-box {
+      background:linear-gradient(135deg,#1b2a4a,#0e6655); color:#fff; padding:40px;
+      border-radius:var(--radius); margin:56px auto; max-width:960px; overflow:hidden;
+    }
+    .dark-box h2 { font-family:'Noto Serif JP',serif; font-size:20px; margin-bottom:8px; color:#ffd700; }
+    .dark-box .dark-lead { font-size:13.5px; opacity:0.85; line-height:1.8; margin-bottom:28px; }
+    .dark-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px; }
+    .dark-item {
+      background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.12);
+      border-radius:var(--radius); padding:18px;
+    }
+    .dark-item h3 { font-size:14px; font-weight:700; margin-bottom:8px; color:#ffd700; display:flex; align-items:center; gap:8px; }
+    .dark-item .sn {
+      display:inline-flex; align-items:center; justify-content:center;
+      width:22px; height:22px; background:rgba(255,215,0,0.25);
+      border:1px solid rgba(255,215,0,0.4); border-radius:50%; font-size:11px; font-weight:700; flex-shrink:0;
+    }
+    .dark-item p { font-size:13px; opacity:0.85; line-height:1.75; }
+
+    /* FOOTER */
+    .footer { margin-top:64px; padding:32px 24px; text-align:center; border-top:1px solid var(--border); font-size:12px; color:var(--ink-muted); }
+
+    @media (max-width:640px) {
+      .hero-inner { padding:48px 20px 40px; }
+      .hero h1 { font-size:22px; }
+      .section { margin:40px auto; }
+      .dark-box { padding:24px 18px; margin:40px 16px; }
+      .dark-grid { grid-template-columns:1fr; }
+      .checklist { grid-template-columns:1fr; }
+      .download-box { flex-direction:column; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<div class="hero">
+  <img src="images/image1.jpeg" alt="自転車通勤" class="hero-img">
+  <div class="hero-overlay"></div>
+  <div class="hero-inner">
+    <div class="hero-badge">2026年4月 道路交通法改正</div>
+    <h1>自転車<em>「青切符」</em>導入で問われる<br>企業の安全教育と<br>自転車通勤制度の導入・見直しのポイント</h1>
+    <p class="hero-sub">自転車の交通反則通告制度が2026年4月より施行。企業として今すぐ取り組むべき安全教育・社内規程整備・保険対策を解説します。従業員向け説明資料付き。</p>
+    <p class="hero-office">土橋社労士事務所 &nbsp;|&nbsp; SOCIAL INSURANCE &amp; LABOR CONSULTANT</p>
+  </div>
+</div>
+
+<!-- ===== LEAD ===== -->
+<div class="lead-box container">
+  <p>近年、健康増進や環境負荷の低減などを目的として、自転車を通勤や業務に活用する企業が増えています。しかし、その一方で自転車の運転者が加害者となる重大事故や交通違反が社会問題化しており、<strong>2026年4月から、道路交通法改正により自転車にも交通反則通告制度（いわゆる「青切符」）が適用</strong>されることとなりました。今回は青切符の仕組みと企業が取り組むべき安全教育・自転車通勤制度の整備ポイントを解説します。記事の最後には、従業員案内用の「自転車の交通ルールの変更」もご用意しています。</p>
+</div>
+
+<!-- ===== CHAPTER 1 ===== -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-icon" style="background:#e8f0fb;">🚲</div>
+    <div>
+      <div class="chapter-label">第1章</div>
+      <h2>自転車「青切符」導入と企業への影響</h2>
+    </div>
+  </div>
+
+  <p style="margin-bottom:24px; font-size:14.5px; color:var(--ink-light);">自転車の通勤・業務利用は、従業員の健康増進や経費削減など、多くのメリットがあります。一方で、法改正によって個人のマナーの問題では済まされないリスクも生じています。まずは、2026年4月に導入された「青切符」の仕組みと従業員の違反が企業にどのような影響を及ぼすのか、その全体像を整理します。</p>
+
+  <div class="card-grid">
+
+    <!-- 1-1 メリットとリスク -->
+    <div class="card">
+      <div class="card-head" style="background:#f0f4f8;">
+        <span style="font-size:22px;">✅</span>
+        <h3>1　自転車利用のメリットと青切符導入に伴う企業のリスク</h3>
+      </div>
+      <div class="card-body">
+        <p>自転車の利用は、従業員にとって健康面や精神面での効果、通勤時間の短縮など、さまざまなメリットがあります。また、従業員の心身の健康が生産性の向上につながるなど、企業にも相乗効果をもたらせます。</p>
+        <p>自転車は環境負荷が低く、健康増進にも寄与するため、国も自転車通勤の普及を推進しています。</p>
+
+        <img src="images/image2.png" alt="自転車利用のメリット（企業側・従業員側）" class="doc-img">
+
+        <p>こうした中、2026年4月、改正道路交通法が施行されました。なかでも注目されているのは自転車への「交通反則通告制度」の適用です。</p>
+
+        <div class="card-sub sub-point">
+          <h4>ℹ️ 青切符とは？</h4>
+          <ul>
+            <li>交通違反をした者が期限内に反則金を納めることで、<strong>裁判を経ずに簡易的に処理</strong>できる仕組み</li>
+            <li>違反者に交付される書面が青色であることから「青切符」と呼ばれる</li>
+            <li>これまでの「赤切符」（刑事罰対象）より警察・違反者双方の負担が軽減され、<strong>前科をつけずに適切なペナルティ</strong>を与えることが可能に</li>
+            <li>悪質・危険・重大な違反や事故の場合は従来どおり「赤切符」による手続き</li>
+          </ul>
+        </div>
+
+        <div class="card-sub sub-warn" style="margin-top:14px;">
+          <h4>👤 対象者・検挙の流れ</h4>
+          <ul>
+            <li><strong>16歳以上</strong>が対象。16歳未満には原則、指導警告が行われる</li>
+            <li>基本的にまず指導警告が実施され、悪質・危険と判断された場合に青切符で検挙</li>
+          </ul>
+        </div>
+
+        <img src="images/image3.png" alt="赤切符と青切符の手続き比較" class="doc-img">
+        <p class="source-cite">出典：<a href="https://www.gov-online.go.jp/article/202410/entry-6604.html" target="_blank">政府広報オンライン『2026年4月から自転車の交通違反に「青切符」を導入！何が変わる？』</a>（一部抜粋）</p>
+
+        <div class="risk-highlight" style="margin-top:20px;">
+          <span style="font-size:24px; flex-shrink:0;">🏢</span>
+          <p>自転車の交通違反の検挙件数は年々増加しています。通勤中・業務中に従業員が自転車による交通違反や事故を起こした場合、<strong>企業としての安全管理責任や社会的信用が厳しく問われるリスク</strong>があります。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1-2 罰則 -->
+    <div class="card">
+      <div class="card-head" style="background:#fdf2f2;">
+        <span style="font-size:22px;">⚠️</span>
+        <h3>2　自転車運転における罰則強化と企業に求められる管理体制</h3>
+      </div>
+      <div class="card-body">
+        <p>自転車運転による交通違反を行った場合、以下のような罰則が科されます。</p>
+
+        <img src="images/image4.png" alt="違反内容および罰則の例" class="doc-img">
+
+        <p>一定台数以上の自動車を使用する事業所では「安全運転管理者」の選任が必要ですが、自転車は選任基準に含まれません。しかし、企業には法令上<strong>「安全配慮義務」</strong>があり、従業員が安全に通勤・就業できる環境を整える責任があります。自動車と同様、自転車を利用する従業員に対しても安全教育を実施し、法令遵守の徹底や交通事故の防止に取り組むことが重要です。</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== CHAPTER 2 ===== -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-icon" style="background:#e8f8f0;">📗</div>
+    <div>
+      <div class="chapter-label">第2章</div>
+      <h2>通勤・業務での自転車利用時に知っておきたいこと</h2>
+    </div>
+  </div>
+
+  <p style="margin-bottom:24px; font-size:14.5px; color:var(--ink-light);">従業員を交通違反や事故から守るためには、まず「何が違反になるのか」という正しい知識を周知することが不可欠です。ここでは、青切符の対象となる基本的な交通ルールと、社内で実施すべき安全教育の具体的な方法について解説します。</p>
+
+  <div class="card-grid">
+
+    <!-- 2-1 五則 -->
+    <div class="card">
+      <div class="card-head" style="background:#e8f8f0;">
+        <span style="font-size:22px;">📋</span>
+        <h3>1　自転車安全利用五則</h3>
+      </div>
+      <div class="card-body">
+        <p>労務担当者は、従業員に対して安全に自転車を利用するよう注意喚起するためにも、自転車利用者が守るべき基本的な交通ルール「自転車安全利用五則」を正しく認識しておく必要があります。</p>
+
+        <img src="images/image5.png" alt="自転車安全利用五則" class="doc-img">
+
+        <p class="source-cite">参考：<a href="https://www.npa.go.jp/bureau/traffic/bicycle/pdf/2nihonngo.pdf" target="_blank">警察庁『自転車安全利用五則』（PDF）</a></p>
+      </div>
+    </div>
+
+    <!-- 2-2 安全教育 -->
+    <div class="card">
+      <div class="card-head" style="background:#f0f4f8;">
+        <span style="font-size:22px;">🎓</span>
+        <h3>2　安全教育の実施</h3>
+      </div>
+      <div class="card-body">
+        <p>従業員が交通ルールにしたがって安全に自転車を利用するためには、安全教育の実施が重要です。定期的に安全教育を実施することにより、従業員の交通安全に対する意識を高めることができます。</p>
+
+        <img src="images/image6.png" alt="安全教育の内容（例）" class="doc-img">
+
+        <div class="card-sub sub-do">
+          <h4>✅ 参考リンク（警察庁）</h4>
+        </div>
+
+        <ul class="link-list">
+          <li><a href="https://www.npa.go.jp/bureau/traffic/bicycle/portal/movie.html" target="_blank">動画／自転車ポータルサイト（警察庁）</a></li>
+          <li><a href="https://www.npa.go.jp/bureau/traffic/bicycle/portal/materials.html" target="_blank">交通安全教育教材／自転車ポータルサイト（警察庁）</a></li>
+        </ul>
+
+        <div class="info-highlight">
+          <span style="font-size:24px; flex-shrink:0;">💡</span>
+          <p>警察庁の自転車ポータルサイトでは、安全教育で活用できる<strong>交通安全の動画や教材</strong>が無料で公開されています。社内研修の教材としてご活用ください。</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== CHAPTER 3 ===== -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-icon" style="background:#fff8e1;">📋</div>
+    <div>
+      <div class="chapter-label">第3章</div>
+      <h2>「自転車通勤制度」の導入・見直しのポイント</h2>
+    </div>
+  </div>
+
+  <p style="margin-bottom:24px; font-size:14.5px; color:var(--ink-light);">安全教育を徹底するのと並行して進めたいのが、社内ルールの明文化です。自転車通勤を個人だけの裁量に任せず、企業として適切に管理・サポートするための規程作成や見直しで押さえておくべき実務上のポイントを解説します。</p>
+
+  <div class="card-grid">
+
+    <!-- 3-1 検討事項 -->
+    <div class="card">
+      <div class="card-head" style="background:#fff8e1;">
+        <span style="font-size:22px;">🔍</span>
+        <h3>1　自転車通勤制度の導入時に検討すべきこと</h3>
+      </div>
+      <div class="card-body">
+        <p>従業員の自転車通勤を認める場合、社内ルールを定めることが重要です。自転車通勤制度を整備してルールを明確にすることで、従業員の自転車通勤の状況把握や適切な安全対策を講じることができます。以下の各項目を参考にして自社の状況にあった内容を検討します。すでに制度化している場合は、現状の課題を整理したうえで制度内容の見直しを行います。</p>
+
+        <img src="images/image7.png" alt="自転車通勤制度導入時の検討事項" class="doc-img">
+
+        <div class="card-sub sub-warn">
+          <h4>⚠️ 通勤災害の認定について</h4>
+          <ul>
+            <li>自転車通勤時の事故などが通勤災害に認定されるかは、その状況によって異なります</li>
+            <li>詳しくは参考手引きP43〜46をご確認ください</li>
+          </ul>
+        </div>
+
+        <ul class="link-list" style="margin-top:16px;">
+          <li><a href="https://www.mlit.go.jp/road/data/tukin-tebiki.pdf" target="_blank">自転車通勤導入に関する手引き（自転車活用推進官民連絡協議会）PDF</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 3-2 規程作成 -->
+    <div class="card">
+      <div class="card-head" style="background:#f0f4f8;">
+        <span style="font-size:22px;">📝</span>
+        <h3>2　自転車通勤規程の作成および周知</h3>
+      </div>
+      <div class="card-body">
+        <p>自転車通勤制度について検討した後、決定した内容に基づき規程や申請書などを作成して従業員に周知します。</p>
+
+        <div class="card-sub sub-point">
+          <h4>ℹ️ テンプレートの参考資料</h4>
+          <ul>
+            <li>「自転車通勤規程」「自転車通勤許可申請書」などのテンプレートは下記手引きP47に掲載</li>
+            <li>各検討事項の解説はP14も参考になります</li>
+          </ul>
+        </div>
+
+        <ul class="link-list" style="margin-top:16px;">
+          <li><a href="https://www.mlit.go.jp/road/data/tukin-tebiki.pdf" target="_blank">自転車通勤導入に関する手引き（P14・P47参照）PDF</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== CHAPTER 4 ===== -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-icon" style="background:#fdf2f2;">🛡️</div>
+    <div>
+      <div class="chapter-label">第4章</div>
+      <h2>通勤中のリスクに備えるために</h2>
+    </div>
+  </div>
+
+  <p style="margin-bottom:24px; font-size:14.5px; color:var(--ink-light);">安全教育などの対策を十分に講じても、事故のリスクをゼロにすることは困難なため、事故発生時の体制を整備することが重要です。万が一の事態に直面したときに、従業員がパニックにならず動ける体制づくりと、企業の賠償リスクを最小限に抑えるための保険の備えについて解説します。</p>
+
+  <div class="card-grid">
+
+    <!-- 4-1 事故フロー -->
+    <div class="card">
+      <div class="card-head" style="background:#fdf2f2;">
+        <span style="font-size:22px;">🚨</span>
+        <h3>1　事故発生時の対応フローの作成</h3>
+      </div>
+      <div class="card-body">
+        <p>万が一事故が発生してしまった場合でも、慌てず対応できるように、企業はあらかじめ事故発生時の対応マニュアルや緊急連絡体制の整備を行い、事故発生時の対応フローを従業員に周知します。</p>
+        <p>事故を起こした従業員は、パニックになりがちです。そのため日頃から安全教育を行い、事故発生時に従業員が適切な対応を行えるよう対応フローを認識させることが重要です。</p>
+
+        <img src="images/image8.png" alt="事故発生時の対応フロー（例）" class="doc-img">
+
+        <p class="source-cite">出典：<a href="https://www.mlit.go.jp/road/data/tukin-tebiki.pdf" target="_blank">自転車活用推進官民連絡協議会『自転車通勤導入に関する手引き』P26</a>（一部抜粋）</p>
+      </div>
+    </div>
+
+    <!-- 4-2 保険 -->
+    <div class="card">
+      <div class="card-head" style="background:#f0f4f8;">
+        <span style="font-size:22px;">🔒</span>
+        <h3>2　自転車損害賠償責任保険等への加入</h3>
+      </div>
+      <div class="card-body">
+        <p>自転車事故では、加害者に<strong>数千万円もの賠償命令</strong>が出るケースもあります。通勤時の事故の場合、事故を起こした従業員自身が対人・対物賠償責任を負います。しかし、その事故が業務中の事故と認定された場合は企業が使用者責任を問われ、損害賠償責任を負うこととなります。</p>
+
+        <img src="images/image9.png" alt="保険加入のフローチャート" class="doc-img">
+
+        <p class="source-cite">出典：<a href="https://www.mlit.go.jp/road/data/tukin-tebiki.pdf" target="_blank">自転車活用推進官民連絡協議会『自転車通勤導入に関する手引き』P28</a>（一部抜粋）</p>
+
+        <p style="margin-top:18px;">こうしたリスクを踏まえ、従業員だけでなく企業も自転車損害賠償責任保険等への加入について検討することをおすすめします。また、近年では条例により自転車損害賠償責任保険等への加入義務、または努力義務を定める自治体が増えています。</p>
+
+        <img src="images/image10.png" alt="条例の主な記載項目と地方公共団体の条例の制定状況" class="doc-img">
+
+        <p class="source-cite">出典：<a href="https://www.mlit.go.jp/road/bicycleuse/promotion/pdf/situation.pdf" target="_blank">国土交通省『自転車損害賠償責任保険等への加入促進』</a>（一部抜粋）</p>
+
+        <div class="card-sub sub-warn" style="margin-top:18px;">
+          <h4>⚠️ 条例の確認を忘れずに</h4>
+          <ul>
+            <li>自社が所在する自治体の条例の制定状況を確認する</li>
+            <li>加入が義務化されている場合は、<strong>従業員および企業ともに加入が必要</strong></li>
+            <li>自転車を通勤手段として認める場合、加入確認を許可条件とすることを推奨</li>
+          </ul>
+        </div>
+
+        <div class="card-sub sub-point" style="margin-top:14px;">
+          <h4>ℹ️ 保険の選択について</h4>
+          <ul>
+            <li>自転車損害賠償責任保険等は、種類によって補償の手厚さや補償限度額が異なる</li>
+            <li>各保険の内容を確認・比較して自社に適したものを選択する</li>
+            <li>詳細は下記手引きP29を参照</li>
+          </ul>
+        </div>
+
+        <ul class="link-list" style="margin-top:16px;">
+          <li><a href="https://www.mlit.go.jp/road/data/tukin-tebiki.pdf" target="_blank">自転車通勤導入に関する手引き（保険の種類はP29参照）PDF</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== DARK BOX まとめ ===== -->
+<div class="dark-box container">
+  <h2>おわりに ― 企業が今すぐ取り組むべき4つのアクション</h2>
+  <p class="dark-lead">2026年の法改正による「青切符」の導入は、単なる交通違反の手続き変更ではありません。社会全体が自転車を「より交通ルール遵守が求められる車両」として認識する時代になってきたといえます。企業にとっても、適切な対応は安全管理体制を強化する好機です。早期の対策を講じることが、従業員の命を守るとともに、企業の信頼向上と長期的な発展につながります。</p>
+  <div class="dark-grid">
+    <div class="dark-item">
+      <h3><span class="sn">1</span>自転車通勤規程の整備・見直し</h3>
+      <p>通勤条件・申請手続き・禁止事項など社内ルールを明文化し、従業員に周知する</p>
+    </div>
+    <div class="dark-item">
+      <h3><span class="sn">2</span>従業員への安全教育の実施</h3>
+      <p>自転車安全利用五則を中心に、定期的な交通安全講習・資料配布を実施する</p>
+    </div>
+    <div class="dark-item">
+      <h3><span class="sn">3</span>賠償責任保険等の加入確認</h3>
+      <p>自治体条例の制定状況を確認し、従業員・企業ともに適切な保険加入を促進する</p>
+    </div>
+    <div class="dark-item">
+      <h3><span class="sn">4</span>事故時の対応フロー整備・周知</h3>
+      <p>万が一の事故に備え、対応マニュアルと緊急連絡体制を整備して従業員に周知する</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 従業員向け資料 ===== -->
+<div class="section">
+  <div class="card">
+    <div class="card-head" style="background:#fff8e1;">
+      <span style="font-size:22px;">📄</span>
+      <h3>従業員向け説明資料のご案内</h3>
+    </div>
+    <div class="card-body">
+      <p>新たなルールを周知するときに活用できる、従業員向け資料「自転車の交通ルールの変更」をご用意しました。社内配布・掲示板への掲示などにご活用ください。</p>
+      <div class="download-box">
+        <div class="download-icon">📥</div>
+        <div class="download-content">
+          <h4>【従業員向け説明資料】自転車の交通ルールの変更</h4>
+          <p>2026年4月から変わる自転車の交通ルールを従業員に分かりやすく案内する資料です。</p>
+          <a href="https://drive.google.com/file/d/1CoRGaUm_-pS_48CWfQ4zW6z1IVogIr57/view" target="_blank" class="download-btn">資料をダウンロード</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div class="footer">
+  <p>SOCIAL INSURANCE &amp; LABOR CONSULTANT &nbsp;|&nbsp; 土橋社労士事務所</p>
+  <p style="margin-top:6px; font-size:11px;">この資料は情報提供を目的として作成されており、法的アドバイスを提供するものではありません。個別の事案については専門家にご相談ください。</p>
+</div>
+
+</body>
+</html>
