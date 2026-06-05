@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta name="googlebot" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<title>建設現場の労災（同居の家族従事者）対応整理</title>
+<style>
+:root {
+  --ink: #1c1c2e;
+  --ink-light: #3b3b5c;
+  --ink-muted: #6e6e8a;
+  --bg: #f9fafb;
+  --bg-warm: #f0f4f8;
+  --bg-card: #ffffff;
+  --accent: #d35400;
+  --navy: #1b2a4a;
+  --teal: #0e6655;
+  --red: #c0392b;
+  --border: #dce1e8;
+  --shadow: rgba(28,28,46,0.07);
+  --radius: 6px;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family:'Noto Sans JP',sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.85;
+  font-size:15px;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(135deg, #0f182b 0%, #2a3c5a 50%, #c0cbd8 100%);
+  color: #fff;
+  padding: 80px 40px 60px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%; left: -20%;
+  width: 150%; height: 150%;
+  background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.02) 40%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+.hero::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 4px;
+  background: linear-gradient(90deg, #aa8e45 0%, #f9f2c8 50%, #aa8e45 100%);
+  z-index: 1;
+}
+.hero-inner { max-width:960px; margin:0 auto; position:relative; z-index:2; }
+.hero-badge {
+  display:inline-block; background:rgba(255,255,255,0.12);
+  border:1px solid rgba(255,255,255,0.3); padding:6px 18px; border-radius:30px;
+  font-size:13px; font-weight:500; letter-spacing:0.08em; margin-bottom:24px;
+  backdrop-filter:blur(4px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.hero h1 {
+  font-family:'Noto Serif JP',serif; font-size:clamp(26px,4vw,40px); font-weight:700; line-height:1.4; margin-bottom:16px;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+.hero h1 em { font-style:normal; color:#ffd700; }
+.hero-sub { font-size:16px; opacity:0.9; font-weight:300; max-width:640px; text-shadow: 0 1px 4px rgba(0,0,0,0.3); }
+
+/* LAYOUT */
+.container { max-width:960px; margin:0 auto; padding:0 24px; }
+
+/* OVERVIEW BOX */
+.overview-box {
+  background:var(--bg-warm); border-left:4px solid var(--accent);
+  padding:32px 36px; margin:48px auto; max-width:960px;
+  border-radius:0 var(--radius) var(--radius) 0;
+}
+.overview-box h2 {
+  font-family:'Noto Serif JP',serif; font-size:20px; color:var(--accent);
+  margin-bottom:16px; display:flex; align-items:center; gap:10px;
+}
+.overview-box h2::before { content:'📋'; font-size:22px; }
+
+/* MEASURES GRID */
+.measures-grid {
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:16px; margin-top:20px;
+}
+.measure-card {
+  background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius);
+  padding:20px; position:relative;
+}
+.measure-num {
+  position:absolute; top:-10px; left:16px;
+  background:var(--navy); color:#fff; width:28px; height:28px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700;
+}
+.measure-card h3 { font-size:14px; font-weight:700; margin-bottom:6px; margin-top:6px; color:var(--navy); }
+.measure-card p { font-size:13px; color:var(--ink-muted); line-height:1.7; }
+
+/* SECTION */
+.section { margin:56px auto; max-width:960px; }
+.section-header {
+  display:flex; align-items:center; gap:14px; margin-bottom:28px;
+  padding-bottom:16px; border-bottom:2px solid var(--ink);
+}
+.section-icon {
+  width:44px; height:44px; border-radius:10px;
+  display:flex; align-items:center; justify-content:center; font-size:22px; flex-shrink:0;
+}
+.section-header h2 { font-family:'Noto Serif JP',serif; font-size:22px; font-weight:700; line-height:1.3; }
+.section-header .section-sub { font-size:13px; color:var(--ink-muted); font-weight:400; }
+
+/* CARDS */
+.card-grid { display:grid; gap:24px; }
+.card {
+  background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius);
+  overflow:hidden; box-shadow:0 2px 12px var(--shadow); transition:box-shadow 0.2s;
+}
+.card:hover { box-shadow:0 4px 24px rgba(28,28,46,0.12); }
+.card-head {
+  padding:20px 24px; display:flex; align-items:center; gap:14px;
+  border-bottom:1px solid var(--border);
+}
+.card-head h3 { font-size:17px; font-weight:700; flex:1; }
+.card-body { padding:24px; }
+.card-body p { margin-bottom:14px; font-size:14.5px; color:var(--ink-light); }
+
+/* CARD SUB-BOXES */
+.card-sub { margin-top:20px; padding:18px 20px; border-radius:var(--radius); border:1px solid; }
+.sub-point { background:#f0f4ff; border-color:#c8d8f0; }
+.sub-do { background:#f0f8f0; border-color:#c8e0c8; }
+.sub-warn { background:#fff8f0; border-color:#f0d8b0; }
+.sub-danger { background:#fdf2f2; border-color:#f0c8c8; }
+
+.card-sub h4 { font-size:13px; font-weight:700; margin-bottom:10px; display:flex; align-items:center; gap:8px; }
+.sub-point h4 { color:var(--navy); }
+.sub-do h4 { color:#2e7d32; }
+.sub-warn h4 { color:#b8860b; }
+.sub-danger h4 { color:var(--red); }
+
+.card-sub ul { list-style:none; padding:0; }
+.card-sub li {
+  position:relative; padding-left:20px; margin-bottom:8px;
+  font-size:13.5px; line-height:1.75; color:var(--ink-light);
+}
+.card-sub li::before { content:'▸'; position:absolute; left:0; color:var(--ink-muted); font-size:11px; top:2px; }
+
+/* FLOW DIAGRAM */
+.flow-section { margin:56px auto; max-width:960px; }
+.flow-section h2 {
+  font-family:'Noto Serif JP',serif; font-size:22px; margin-bottom:24px;
+  padding-bottom:12px; border-bottom:2px solid var(--ink);
+}
+.flow-steps { display:flex; flex-direction:column; gap:0; }
+.flow-step {
+  display:flex; gap:20px; align-items:flex-start; position:relative; padding-bottom:24px;
+}
+.flow-step:not(:last-child)::before {
+  content:''; position:absolute; left:19px; top:40px; bottom:0; width:2px; background:var(--border);
+}
+.flow-num {
+  width:40px; height:40px; border-radius:50%; flex-shrink:0;
+  display:flex; align-items:center; justify-content:center;
+  font-size:16px; font-weight:700; color:#fff; z-index:1; background:var(--navy);
+}
+.flow-content {
+  background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius);
+  padding:18px 22px; flex:1;
+}
+.flow-content h3 { font-size:15px; font-weight:700; margin-bottom:6px; }
+.flow-content p { font-size:13.5px; color:var(--ink-light); line-height:1.7; }
+
+/* COMPARISON TABLE */
+.compare-table {
+  width:100%; border-collapse:collapse; margin-top:20px;
+  background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius);
+  overflow:hidden;
+}
+.compare-table th {
+  background:var(--navy); color:#fff; padding:14px 18px; text-align:left; font-size:13px; font-weight:700;
+}
+.compare-table td {
+  padding:14px 18px; border-bottom:1px solid var(--border); font-size:13.5px; color:var(--ink-light); line-height:1.7;
+}
+.compare-table tr:nth-child(even) td { background:#f8f9fb; }
+
+/* DARK BOX */
+.dark-box {
+  background:linear-gradient(135deg,#1b2a4a,#0e6655); color:#fff; padding:40px; border-radius:var(--radius);
+  margin:56px auto; max-width:960px; position:relative; overflow:hidden;
+}
+.dark-box h2 { font-family:'Noto Serif JP',serif; font-size:20px; margin-bottom:20px; color:#ffd700; }
+.dark-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:20px; }
+.dark-item {
+  background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.12);
+  border-radius:var(--radius); padding:20px;
+}
+.dark-item h3 { font-size:15px; font-weight:700; margin-bottom:8px; color:#ffd700; }
+.dark-item p { font-size:13px; opacity:0.85; line-height:1.75; }
+
+/* CHECKLIST */
+.checklist-section { margin:56px auto; max-width:960px; }
+.checklist-section h2 { font-family:'Noto Serif JP',serif; font-size:22px; margin-bottom:24px; padding-bottom:12px; border-bottom:2px solid var(--ink); }
+.checklist { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px; }
+.check-item { background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius); padding:18px 20px; display:flex; gap:14px; align-items:flex-start; }
+.check-box { width:22px; height:22px; border:2px solid var(--border); border-radius:4px; flex-shrink:0; margin-top:2px; }
+
+/* FOOTER */
+.footer { margin-top:64px; padding:32px 24px; text-align:center; border-top:1px solid var(--border); font-size:12px; color:var(--ink-muted); }
+
+@media (max-width:640px) {
+  .hero { padding:48px 20px 40px; }
+  .hero h1 { font-size:24px; }
+  .overview-box { padding:24px 20px; margin:32px 16px; }
+  .measures-grid { grid-template-columns:1fr; }
+  .section { margin:40px auto; }
+  .dark-box { padding:28px 20px; margin:40px 16px; }
+  .dark-grid { grid-template-columns:1fr; }
+  .flow-step { flex-direction:column; gap:12px; }
+  .flow-step:not(:last-child)::before { display:none; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <span class="hero-badge">社労士間相談 / 事案整理メモ</span>
+    <h1>建設現場の労災事故<br><em>同居の家族従事者</em>が被災したケースの対応整理</h1>
+    <p class="hero-sub">下請（一人親方）の同居の息子が現場で落下事故。特別加入なし・健保も使えないと言われた——制度上どこまで可能か、現実的な打ち手を整理します。</p>
+  </div>
+</div>
+
+<!-- 事案の概要 -->
+<div class="overview-box">
+  <h2>事案の概要</h2>
+  <div class="measures-grid">
+    <div class="measure-card">
+      <span class="measure-num">A</span>
+      <h3>発生状況</h3>
+      <p>建設現場での落下事故。被災者は入院中（業務中の災害）。</p>
+    </div>
+    <div class="measure-card">
+      <span class="measure-num">B</span>
+      <h3>被災者の立場</h3>
+      <p>下請（個人事業主＝父）の息子。父と<strong>同居</strong>し、下請には<strong>他に従業員なし</strong>。＝「同居の家族従事者」。</p>
+    </div>
+    <div class="measure-card">
+      <span class="measure-num">C</span>
+      <h3>保険の状況</h3>
+      <p>労災の<strong>特別加入なし</strong>。病院に「業務中」と伝えたため、健康保険も使えないと案内された。</p>
+    </div>
+  </div>
+</div>
+
+<!-- 結論 -->
+<div class="dark-box">
+  <h2>まず結論</h2>
+  <div class="dark-grid">
+    <div class="dark-item">
+      <h3>① 元請の労働者として</h3>
+      <p>実態次第だが、賃金支払・指揮命令は父→息子の構造。元請との使用従属関係の立証は一般に非常に困難。<strong>認定可能性は低い。</strong></p>
+    </div>
+    <div class="dark-item">
+      <h3>② 父の従業員として</h3>
+      <p>同居親族のみ・他従業員ゼロのため、労働者扱いの「踏み台」自体がない。<strong>制度上ほぼ成立しない。</strong></p>
+    </div>
+    <div class="dark-item">
+      <h3>現実的な三本柱</h3>
+      <p>(1) 労災は事実上期待できないことの共有 / (2) 健保（特に国保）が本当に使えないかの再確認 / (3) 元請・下請による民事的・道義的補償の検討。</p>
+    </div>
+  </div>
+</div>
+
+<!-- 選択肢の検討 -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-icon" style="background:#fdf2f2;">⚖️</div>
+    <div>
+      <h2>2つの選択肢の検討</h2>
+      <div class="section-sub">なぜ①②とも認定可能性が低いのか</div>
+    </div>
+  </div>
+
+  <div class="card-grid">
+    <!-- 選択肢2 -->
+    <div class="card">
+      <div class="card-head">
+        <h3>選択肢② 父（下請）の従業員として労災申請する</h3>
+      </div>
+      <div class="card-body">
+        <p>同居の親族を労働者とみなすには、法令上の例外要件を満たす必要があります。本件はその入口で要件を欠きます。</p>
+        <div class="card-sub sub-point">
+          <h4>📌 同居親族を労働者扱いできる要件</h4>
+          <ul>
+            <li>① 同居の親族<strong>以外</strong>の労働者を常時使用していること</li>
+            <li>② その一般労働者と同様の就労実態・賃金管理（始業終業の管理、労働の対償としての賃金）があること</li>
+          </ul>
+        </div>
+        <div class="card-sub sub-danger">
+          <h4>🚫 本件での判定</h4>
+          <ul>
+            <li>下請は<strong>同居親族のみ・他従業員ゼロ</strong>＝要件①を満たせない</li>
+            <li>そもそも労働者扱いする法的な「踏み台」がない → <strong>制度上ほぼ不可</strong></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 選択肢1 -->
+    <div class="card">
+      <div class="card-head">
+        <h3>選択肢① 元請の労働者として取り扱えないか相談する</h3>
+      </div>
+      <div class="card-body">
+        <p>形式が請負でも、実態が元請の労働者そのものであれば労災適用の余地はあります。ただし本件の構造では立証が難しく、リスクも伴います。</p>
+        <div class="card-sub sub-warn">
+          <h4>⚠️ 本件の構造（立証のハードル）</h4>
+          <ul>
+            <li>賃金（請負代金）は<strong>父に支払われ</strong>、息子は父の事業に従事する家族従事者</li>
+            <li>元請から息子への直接の賃金支払・指揮命令・勤怠管理の実態が乏しい</li>
+            <li>「元請との直接の使用従属関係」の立証は一般に非常に困難</li>
+          </ul>
+        </div>
+        <div class="card-sub sub-danger">
+          <h4>🚫 やってはいけないこと</h4>
+          <ul>
+            <li>実態がないのに雇用関係を創作するのは<strong>虚偽申請</strong>のリスク</li>
+            <li>無理に①を狙うルートは実務上、安易には勧められない</li>
+          </ul>
+        </div>
+        <div class="card-sub sub-do">
+          <h4>✅ 進めるなら</h4>
+          <ul>
+            <li>就労実態を<strong>ありのまま</strong>整理したうえで、材料があれば労基署に労働者性の判断を相談する</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 健康保険の論点 -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-icon" style="background:#f0f8f0;">🏥</div>
+    <div>
+      <h2>最優先の論点：健康保険（特に国保）は本当に使えないのか</h2>
+      <div class="section-sub">この事案で最も見落とされやすく、効果が大きいポイント</div>
+    </div>
+  </div>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-head">
+        <h3>「業務中だから健保は一切ダメ」は正確ではない</h3>
+      </div>
+      <div class="card-body">
+        <div class="card-sub sub-point">
+          <h4>📌 確認すべきこと</h4>
+          <ul>
+            <li>息子が実際に加入している<strong>医療保険の種類</strong>（市区町村国保／国保組合／協会けんぽの被扶養者 等）を確認する</li>
+            <li>「<strong>労災の対象外である業務上の傷病</strong>」として、保険者が給付対象にし得るかを個別に判断してもらう</li>
+            <li>国保はもともと業務上・業務外の区別が緩く、給付対象になり得る</li>
+          </ul>
+        </div>
+        <div class="card-sub sub-do">
+          <h4>✅ 具体的アクション</h4>
+          <ul>
+            <li>病院窓口の「業務中だからダメ」の一言で終わらせない</li>
+            <li>保険者（市区町村国保・協会けんぽ等）の判断を取り直す</li>
+            <li>給付が認められれば、高額療養費制度で自己負担を軽減</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- よくある誤解 -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-icon" style="background:#fff8f0;">❗</div>
+    <div>
+      <h2>注意：「5人未満なら健保が使える」は論点がズレている</h2>
+      <div class="section-sub">保険者への説明を誤らないために</div>
+    </div>
+  </div>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-body" style="padding-top:24px;">
+        <div class="card-sub sub-warn" style="margin-top:0;">
+          <h4>⚠️ 別物として整理する</h4>
+          <ul>
+            <li>「5人以上／未満」は、本来<strong>個人事業所の社会保険（強制）適用義務</strong>の基準の話</li>
+            <li>本件の「<strong>家族従事者の業務上災害に健保が使えるか</strong>」とは<strong>別の論点</strong></li>
+            <li>本件で重要なのは、<strong>実際の加入医療保険の種別</strong>と、<strong>保険者が労災対象外の業務上傷病として給付し得るか</strong>の個別判断</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 全体像（労災としての帰結） -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-icon" style="background:#f0f4ff;">🏗️</div>
+    <div>
+      <h2>労災としての帰結（早見表）</h2>
+      <div class="section-sub">本来の「器」は特別加入だった</div>
+    </div>
+  </div>
+  <table class="compare-table">
+    <thead>
+      <tr><th>器（制度）</th><th>本件の被災者（同居の息子）の扱い</th><th>結論</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>元請労災（現場一括）</td><td>事業主・同居親族は原則対象外。元請との使用従属関係の立証も困難</td><td>息子は外れる</td></tr>
+      <tr><td>父の労災</td><td>同居親族のみ・他従業員なしで労働者認定の要件を欠く</td><td>労働者認定ほぼ不可</td></tr>
+      <tr><td>一人親方等の特別加入（第2種）</td><td><strong>本来カバーすべき器だが未加入</strong>。事故後の遡及加入は不可</td><td>未加入のため使えない</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- 対応フロー -->
+<div class="flow-section">
+  <h2>🧭 現実的な対応の進め方</h2>
+  <div class="flow-steps">
+    <div class="flow-step">
+      <div class="flow-num">1</div>
+      <div class="flow-content">
+        <h3>医療保険の種別を確認し、保険者に再相談（最優先）</h3>
+        <p>息子の加入保険（国保か等）を確認。「労災対象外の業務上傷病」として給付できないか、保険者の判断を取り直す。</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">2</div>
+      <div class="flow-content">
+        <h3>元請の任意保険（上乗せ・賠償責任保険）を確認</h3>
+        <p>建設業の元請は労災上乗せ保険・請負業者賠償責任保険に加入していることが多い。被災者が対象に含まれるか、補償範囲を元請に確認。</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">3</div>
+      <div class="flow-content">
+        <h3>就労実態を精査（①案の可否判断）</h3>
+        <p>元請から息子への直接の指揮命令・賃金支払・勤怠管理の実態があるか。材料があれば労基署に労働者性を相談（事実を歪めない）。</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">4</div>
+      <div class="flow-content">
+        <h3>民事的・道義的な補償を検討</h3>
+        <p>元請・下請による見舞金・医療費補填、安全配慮義務の観点からの補償を落ち着いて整理。</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">5</div>
+      <div class="flow-content">
+        <h3>再発防止（今後の徹底）</h3>
+        <p>一人親方・家族従事者の特別加入の徹底、現場入場時の加入確認をルール化。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 精査に必要な情報 -->
+<div class="checklist-section">
+  <h2>✅ さらに精査するために確認したい情報</h2>
+  <div class="checklist">
+    <div class="check-item">
+      <div class="check-box"></div>
+      <div>息子が現在加入している医療保険の種類（市区町村国保／国保組合／協会けんぽの被扶養者 等）</div>
+    </div>
+    <div class="check-item">
+      <div class="check-box"></div>
+      <div>元請から息子への直接の指揮命令・賃金支払・勤怠管理の実態の有無</div>
+    </div>
+    <div class="check-item">
+      <div class="check-box"></div>
+      <div>元請の労災上乗せ保険・賠償責任保険の有無と補償範囲</div>
+    </div>
+    <div class="check-item">
+      <div class="check-box"></div>
+      <div>受傷内容・程度、治療費の現状（未精算か）</div>
+    </div>
+  </div>
+</div>
+
+<!-- 結語 -->
+<div class="dark-box">
+  <h2>結語</h2>
+  <div class="dark-grid">
+    <div class="dark-item">
+      <h3>①②は無理筋</h3>
+      <p>制度要件から見て、両案とも認定可能性は極めて低い。労災として救済する器は実質的に残っていない。</p>
+    </div>
+    <div class="dark-item">
+      <h3>取るべき現実的対応</h3>
+      <p>健保（国保）側での取扱い再確認 ＋ 元請・下請による任意補償 ＋ 今後の特別加入徹底。これを落ち着いて整理するのが現実的。</p>
+    </div>
+    <div class="dark-item">
+      <h3>当面の一手</h3>
+      <p>まずは医療保険の種別確認と保険者への再相談から。ここが最も即効性のあるポイント。</p>
+    </div>
+  </div>
+</div>
+
+<!-- 注記 -->
+<div class="container">
+  <div class="card-sub sub-warn" style="margin:40px auto; max-width:960px;">
+    <h4>⚠️ 本資料の位置づけ</h4>
+    <ul>
+      <li>一般的な制度・判断枠組みに基づく整理です。最終的な可否は、被災者の保険種別・就労実態の事実確認のうえ、所轄の労働基準監督署・労働局・各保険者に確認して進めてください。</li>
+    </ul>
+  </div>
+</div>
+
+<div class="footer">
+  <p>建設業・労災 / 同居の家族従事者の労働者性 事案整理 &nbsp;|&nbsp; 土橋社労士事務所</p>
+  <p>SOCIAL INSURANCE &amp; LABOR CONSULTANT &nbsp;|&nbsp; 土橋社労士事務所</p>
+</div>
+
+</body>
+</html>
